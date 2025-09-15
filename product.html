@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoKart</title>
+    <link href="src/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="flex min-h-dvh flex-col">
+    <a
+      href="/"
+      class="fixed top-4 left-8 z-50 flex items-center gap-2 rounded-full bg-white px-4 py-2 font-[Karla] text-sm text-gray-700 shadow-md transition hover:bg-gray-100"
+    >
+      <i class="fas fa-arrow-left"></i>
+      Back
+    </a>
+    <main class="flex flex-grow flex-col px-8 pt-16 pb-8">
+      <section
+        class="md:grid-rows-0 grid flex-grow gap-8 max-md:grid-rows-2 md:grid-cols-2"
+      >
+        <div class="relative h-full w-full overflow-hidden rounded-lg">
+          <img id="image" class="absolute h-full w-full object-cover" />
+        </div>
+        <div class="flex flex-col items-start gap-y-8">
+          <div class="flex flex-col">
+            <h1 id="title" class="font-[Montserrat] text-4xl font-bold">
+              Product Title
+            </h1>
+            <p id="subtitle" class="font-[Karla] text-gray-700">
+              Product Subtitle
+            </p>
+          </div>
+          <div id="description" class="font-[Karla] lg:text-lg xl:text-xl">
+            Product Description
+          </div>
+          <button
+            class="cursor-pointer rounded-full bg-orange-600 px-8 py-3 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-orange-500 focus-visible:bg-orange-500"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-black py-4 text-center font-[Karla] text-white">
+      &copy; 2025 EcoKart. Committed to sustainable and eco-friendly products.
+      All rights reserved.
+    </footer>
+    <script type="module" src="src/pages/product.ts"></script>
+  </body>
+</html>

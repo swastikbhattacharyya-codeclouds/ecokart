@@ -1,4 +1,5 @@
 export interface Product {
+  id: number;
   name: string;
   shortDescription: string;
   longDescription: string;
@@ -13,11 +14,8 @@ export async function fetchProducts(): Promise<Product[]> {
   return products as Product[];
 }
 
-export function shuffleProducts(products: Product[]): Product[] {
-  const copy = [...products];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
+export async function fetchProductDetails(id: number): Promise<Product | null> {
+  const products = await fetchProducts();
+  const product = products.find((p) => p.id === id);
+  return product || null;
 }

@@ -1,4 +1,4 @@
-import { fetchProducts, shuffleProducts } from "./product";
+import { fetchProducts } from "../product";
 
 function renderStars(rating: number): string {
   const rounded = Math.round(rating * 2) / 2;
@@ -16,7 +16,7 @@ function renderStars(rating: number): string {
 
 async function addProductsToGrid() {
   const grid = document.querySelector("#products-grid");
-  const products = shuffleProducts(await fetchProducts());
+  const products = await fetchProducts();
 
   products.forEach(function (product) {
     const card = document.createElement("div");
@@ -45,11 +45,19 @@ async function addProductsToGrid() {
               <p class="font-[Montserrat] text-lg font-bold">&#8377; ${product.price}</p>
             </div>
           </div>
-          <button
-            class="w-full h-[40px] cursor-pointer bg-orange-600 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-orange-500"
-          >
-            Add to Cart
-          </button>
+          <div class="flex w-full">
+            <button
+              class="h-[40px] flex-grow cursor-pointer bg-orange-600 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-orange-500"
+            >
+              Add to Cart
+            </button>
+            <a
+              class="h-[40px] flex justify-center items-center flex-grow cursor-pointer bg-stone-700 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-stone-600"
+              href="/product?id=${product.id}"
+            >
+              View Product
+            </a>
+          </div>
         </div>
       </div>
     `;
