@@ -1,10 +1,71 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcoKart</title>
     <link href="src/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <header
+      class="relative flex min-h-[70dvh] items-center py-8 text-white md:min-h-[75dvh]"
+    >
+      <img
+        class="absolute -z-10 h-full w-full object-cover brightness-30"
+        src="hero.jpg"
+      />
+      <div
+        class="flex flex-col items-center gap-y-6 px-4 text-center sm:max-w-[50dvw] sm:items-start sm:pr-0 sm:pl-[5dvw] sm:text-left"
+      >
+        <div
+          class="font-[Montserrat] text-2xl font-bold md:flex md:flex-col md:gap-y-2 md:text-3xl lg:text-4xl 2xl:gap-y-4 2xl:text-5xl"
+        >
+          <div>Looking For</div>
+          <div><span class="text-orange-600">Eco-Friendly</span> Products?</div>
+          <div>Shop EcoKart</div>
+        </div>
+        <div class="font-[Karla] text-gray-200 md:text-lg">
+          Discover eco-friendly essentials that are good for you and the planet.
+          At EcoKart, we bring you sustainable, affordable, and everyday
+          products for a greener lifestyle.
+        </div>
+        <a
+          href="#products"
+          class="cursor-pointer rounded-full bg-orange-600 px-8 py-3 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-orange-500 focus-visible:bg-orange-500"
+        >
+          Shop Now
+        </a>
+      </div>
+    </header>
+    <main class="my-8 flex flex-col">
+      <section id="products" class="flex flex-col gap-y-8">
+        <h1 class="text-center font-[Montserrat] text-4xl font-bold">
+          Our Products
+        </h1>
+        <div
+          id="products-grid"
+          class="grid grid-cols-1 place-items-center items-stretch gap-x-2 gap-y-4 px-4 sm:grid-cols-2 md:mx-[5dvw] md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+        />
+      </section>
+    </main>
+    <footer class="bg-black py-4 text-center font-[Karla] text-white">
+      &copy; 2025 EcoKart. Committed to sustainable and eco-friendly products.
+      All rights reserved.
+    </footer>
+    <script type="module" src="src/index.ts"></script>
+  </body>
 </html>
