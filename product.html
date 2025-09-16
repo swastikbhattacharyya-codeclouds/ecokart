@@ -21,21 +21,54 @@
     />
   </head>
   <body class="flex min-h-dvh flex-col">
-    <a
-      href="/"
-      class="fixed top-4 left-8 z-50 flex items-center gap-2 rounded-full bg-white px-4 py-2 font-[Karla] text-sm text-gray-700 shadow-md transition hover:bg-gray-100"
+    <nav
+      class="sticky top-0 z-50 flex items-center justify-between bg-orange-50/80 px-[10dvw] py-4 font-[Montserrat] shadow-xl backdrop-blur-sm"
     >
-      <i class="fas fa-arrow-left"></i>
-      Back
-    </a>
-    <main class="flex flex-grow flex-col px-8 pt-16 pb-8">
+      <div class="w-[24px]"></div>
+      <div class="text-xl font-bold text-gray-900">EcoKart</div>
+      <div class="relative">
+        <button
+          id="cart-button"
+          class="text-2xl text-gray-800 transition hover:text-orange-600"
+          aria-label="Cart"
+        >
+          <i class="fas fa-shopping-cart"></i>
+        </button>
+        <span
+          id="cart-count-badge"
+          class="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white"
+        >
+          0
+        </span>
+      </div>
+    </nav>
+    <main class="flex flex-grow flex-col px-8 pt-4 pb-8 md:pt-16">
       <section
-        class="md:grid-rows-0 grid flex-grow gap-8 max-md:grid-rows-2 md:grid-cols-2"
+        class="md:grid-rows-0 flex flex-grow flex-col gap-8 max-md:grid-rows-2 md:grid md:grid-cols-2"
       >
-        <div class="relative h-full w-full overflow-hidden rounded-lg">
-          <img id="image" class="absolute h-full w-full object-cover" />
+        <div
+          class="relative w-full overflow-hidden rounded-lg max-md:aspect-square max-md:h-auto md:h-full"
+        >
+          <a
+            href="/"
+            class="mb-2 flex max-w-max items-center gap-2 rounded-full bg-white px-4 py-2 font-[Karla] text-sm text-gray-700 shadow-md transition hover:bg-gray-100 md:hidden"
+          >
+            <i class="fas fa-arrow-left"></i>
+            Back
+          </a>
+          <img
+            id="image"
+            class="absolute aspect-square w-full object-cover md:h-full"
+          />
         </div>
         <div class="flex flex-col items-start gap-y-8">
+          <a
+            href="/"
+            class="items-center gap-2 rounded-full bg-white px-4 py-2 font-[Karla] text-sm text-gray-700 shadow-md transition hover:bg-gray-100 max-md:hidden md:flex"
+          >
+            <i class="fas fa-arrow-left"></i>
+            Back
+          </a>
           <div class="flex flex-col">
             <h1 id="title" class="font-[Montserrat] text-4xl font-bold">
               Product Title
@@ -47,11 +80,16 @@
           <div id="description" class="font-[Karla] lg:text-lg xl:text-xl">
             Product Description
           </div>
-          <button
-            class="cursor-pointer rounded-full bg-orange-600 px-8 py-3 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-orange-500 focus-visible:bg-orange-500"
-          >
-            Add to Cart
-          </button>
+          <div id="price" class="font-[Karla] font-bold lg:text-xl xl:text-2xl">
+            Product Price
+          </div>
+          <div>
+            <button
+              class="add-to-cart-btn cursor-pointer rounded-full bg-orange-600 px-8 py-3 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-orange-500 focus-visible:bg-orange-500"
+            >
+              Add to Cart
+            </button>
+          </div>
         </div>
       </section>
     </main>
