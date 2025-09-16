@@ -27,13 +27,14 @@
       <div class="w-[24px]"></div>
       <div class="text-xl font-bold text-gray-900">EcoKart</div>
       <div class="relative">
-        <button
+        <a
+          href="/checkout"
           id="cart-button"
-          class="text-2xl text-gray-800 transition hover:text-orange-600"
+          class="cursor-pointer text-2xl text-gray-800 transition hover:text-orange-600"
           aria-label="Cart"
         >
           <i class="fas fa-shopping-cart"></i>
-        </button>
+        </a>
         <span
           id="cart-count-badge"
           class="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white"
@@ -50,7 +51,7 @@
           class="relative w-full overflow-hidden rounded-lg max-md:aspect-square max-md:h-auto md:h-full"
         >
           <a
-            href="/"
+            href="javascript:history.back()"
             class="mb-2 flex max-w-max items-center gap-2 rounded-full bg-white px-4 py-2 font-[Karla] text-sm text-gray-700 shadow-md transition hover:bg-gray-100 md:hidden"
           >
             <i class="fas fa-arrow-left"></i>
@@ -63,7 +64,7 @@
         </div>
         <div class="flex flex-col items-start gap-y-8">
           <a
-            href="/"
+            href="javascript:history.back()"
             class="items-center gap-2 rounded-full bg-white px-4 py-2 font-[Karla] text-sm text-gray-700 shadow-md transition hover:bg-gray-100 max-md:hidden md:flex"
           >
             <i class="fas fa-arrow-left"></i>
@@ -80,9 +81,10 @@
           <div id="description" class="font-[Karla] lg:text-lg xl:text-xl">
             Product Description
           </div>
-          <div id="price" class="font-[Karla] font-bold lg:text-xl xl:text-2xl">
-            Product Price
-          </div>
+          <div
+            id="price"
+            class="font-[Karla] font-bold lg:text-xl xl:text-2xl"
+          ></div>
           <div>
             <button
               class="add-to-cart-btn cursor-pointer rounded-full bg-orange-600 px-8 py-3 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-orange-500 focus-visible:bg-orange-500"

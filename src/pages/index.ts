@@ -1,10 +1,4 @@
-import {
-  addToCart,
-  fetchCart,
-  getQuantity,
-  removeFromCart,
-  setQuantity,
-} from "../cart";
+import { addToCart, fetchCart, getQuantity } from "../cart";
 import { fetchProducts } from "../product";
 
 function renderStars(rating: number): string {
@@ -20,41 +14,14 @@ function renderStars(rating: number): string {
   return html;
 }
 
-function renderQtySelector(itemId: number, quantity: number): string {
-  return `
-    <div
-      class="cart-qty-selector relative flex h-[40px] flex-grow items-center overflow-hidden bg-gray-300 font-[Montserrat] font-bold text-black"
-      data-id="${itemId}"
-    >
-      <button
-        class="decrement-btn aspect-square w-auto h-full flex items-center justify-center bg-red-600 hover:bg-red-500 rounded-r-md transition-[background] duration-200 cursor-pointer"
-        type="button"
-      >
-        −
-      </button>
-      <input
-        type="number"
-        min="1"
-        value="${quantity}"
-        class="quantity-input mx-2 h-full w-full flex-grow text-center outline-none"
-      />
-      <button
-        class="increment-btn aspect-square w-auto h-full flex items-center justify-center bg-green-600 hover:bg-green-500 rounded-l-md transition-[background] duration-200 cursor-pointer"
-        type="button"
-      >
-        +
-      </button>
-    </div>
-  `;
-}
-
-function renderAddToCartButton(itemId: number): string {
+function renderAddToCartButton(itemId: number, inCart: boolean): string {
   return `
     <button
       data-id="${itemId}"
-      class="add-to-cart-btn h-[40px] cursor-pointer bg-orange-600 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-orange-500"
+      class="add-to-cart-btn h-[40px] cursor-pointer bg-orange-600 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-orange-500 disabled:opacity-60 disabled:cursor-not-allowed"
+      ${inCart && "disabled"}
     >
-      Add to Cart
+      ${inCart ? "Added" : "Add to Cart"}
     </button>
   `;
 }
@@ -133,11 +100,7 @@ async function addProductsToGrid() {
             </div>
           </div>
           <div class="grid grid-cols-2 w-full">
-            ${
-              isInCart
-                ? renderQtySelector(product.id, quantity)
-                : renderAddToCartButton(product.id)
-            }
+            ${renderAddToCartButton(product.id, isInCart)}
             <a
               class="h-[40px] flex justify-center items-center cursor-pointer bg-stone-700 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-stone-600"
               href="/product?id=${product.id}"
@@ -150,7 +113,6 @@ async function addProductsToGrid() {
     `;
 
     grid.appendChild(card);
-    if (isInCart) setupQtySelector(product.id);
   });
 }
 
@@ -169,92 +131,18 @@ function setupCart() {
       const itemId = parseInt(dataId);
       if (isNaN(itemId)) return;
 
-      const quantity = addToCart(itemId);
+      addToCart(itemId);
 
       const card = button.closest(".shadow-xl");
       const image = card?.querySelector("img");
       if (image instanceof HTMLImageElement)
         animateFlyToCart(event as MouseEvent, image);
-
-      button.outerHTML = renderQtySelector(itemId, quantity);
-      setupQtySelector(itemId);
+      button.setAttribute("disabled", "true");
+      button.innerHTML = "Added";
     });
   });
 
   updateCartCount();
-}
-
-function setupQtySelector(itemId: number) {
-  const parent = document.querySelector(
-    `.cart-qty-selector[data-id="${itemId}"]`,
-  );
-  if (!parent) return;
-
-  let quantity = getQuantity(itemId) ?? 0;
-
-  const decrementBtn = parent.querySelector(".decrement-btn");
-  const incrementBtn = parent.querySelector(".increment-btn");
-  const quantityInput = parent.querySelector(
-    ".quantity-input",
-  ) as HTMLInputElement;
-
-  if (!quantityInput) return;
-
-  quantityInput.addEventListener("keydown", (e: KeyboardEvent) => {
-    if (
-      [
-        "Backspace",
-        "Tab",
-        "Delete",
-        "ArrowLeft",
-        "ArrowRight",
-        "Enter",
-      ].includes(e.key)
-    )
-      return;
-
-    if (!/^\d$/.test(e.key)) e.preventDefault();
-  });
-
-  quantityInput.addEventListener("input", () => {
-    const value = parseInt(quantityInput.value);
-    if (isNaN(value)) return;
-    quantity = value;
-    setQuantity(itemId, quantity);
-  });
-
-  quantityInput.addEventListener("blur", () => {
-    const value = parseInt(quantityInput.value);
-    if (isNaN(value) || value < 1) {
-      quantityInput.value = getQuantity(itemId)?.toString() ?? "1";
-    }
-
-    if (quantity === 0) {
-      parent.outerHTML = renderAddToCartButton(itemId);
-      setupCart();
-      removeFromCart(itemId);
-      updateCartCount();
-    }
-  });
-
-  incrementBtn?.addEventListener("click", () => {
-    quantity++;
-    quantityInput.value = quantity.toString();
-    addToCart(itemId);
-  });
-
-  decrementBtn?.addEventListener("click", () => {
-    if (quantity > 1) {
-      quantity--;
-      quantityInput.value = quantity.toString();
-      removeFromCart(itemId);
-    } else {
-      parent.outerHTML = renderAddToCartButton(itemId);
-      setupCart();
-      removeFromCart(itemId);
-      updateCartCount();
-    }
-  });
 }
 
 async function indexPage() {

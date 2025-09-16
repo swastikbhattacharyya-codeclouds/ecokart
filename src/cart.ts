@@ -52,3 +52,12 @@ export function removeFromCart(item: number) {
 
   saveCart(cart);
 }
+
+export function clearCart() {
+  const cart: Cart = {
+    items: [],
+    discountCode: "",
+  };
+
+  saveCart(cart);
+}
