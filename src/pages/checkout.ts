@@ -42,6 +42,7 @@ function renderProduct(
               type="number"
               value="${quantity}"
               min="1"
+              max="10"
               class="w-10 border-none text-center text-sm text-gray-800 focus:outline-none cursor-default"
             />
             <button
@@ -73,7 +74,8 @@ function setupQuantityHandlers(id: number, unitPrice: number) {
 
   incrementBtn.addEventListener("click", () => {
     const current = parseInt(input.value);
-    const newQuantity = current + 1;
+    let newQuantity = current + 1;
+    if (newQuantity > 10) newQuantity = 10;
     input.value = newQuantity.toString();
     setQuantity(id, newQuantity);
     updateProductPrice(id, unitPrice);

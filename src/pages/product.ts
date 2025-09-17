@@ -25,6 +25,7 @@ export function renderQtySelector(itemId: number, quantity: number): string {
         type="number"
         value="${quantity}"
         min="1"
+        max="10"
         class="quantity-input w-10 border-none text-center text-sm text-gray-800 focus:outline-none cursor-default"
       />
       <button
@@ -177,32 +178,11 @@ function setupQtySelector(itemId: number) {
     if (!/^\d$/.test(e.key)) e.preventDefault();
   });
 
-  input.addEventListener("input", () => {
-    const val = parseInt(input.value);
-    if (isNaN(val)) return;
-    quantity = val;
-    setQuantity(itemId, quantity);
-    updateCartCount();
-  });
-
-  input.addEventListener("blur", () => {
-    const val = parseInt(input.value);
-    if (isNaN(val) || val < 1) {
-      input.value = getQuantity(itemId)?.toString() ?? "1";
-    }
-
-    if (quantity === 0) {
-      parent.outerHTML = renderAddToCartButton(itemId);
-      setupAddToCart(itemId);
-      removeFromCart(itemId);
-      updateCartCount();
-    }
-  });
-
   incBtn?.addEventListener("click", () => {
     quantity++;
+    if (quantity > 10) quantity = 10;
     input.value = quantity.toString();
-    addToCart(itemId);
+    setQuantity(itemId, quantity);
     updateCartCount();
   });
 

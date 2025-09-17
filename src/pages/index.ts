@@ -75,7 +75,7 @@ async function addProductsToGrid() {
 
     const card = document.createElement("div");
     card.className =
-      "flex w-full max-w-[325px] flex-col overflow-hidden rounded-md shadow-xl";
+      "product-card flex w-full max-w-[325px] flex-col overflow-hidden rounded-md shadow-xl";
 
     card.innerHTML = `
       <img
