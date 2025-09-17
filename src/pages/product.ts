@@ -112,6 +112,7 @@ async function addProductDetails() {
   subtitle.innerHTML = product.shortDescription;
   description.innerHTML = product.longDescription;
   image.setAttribute("src", product.imagePath);
+  image.setAttribute("alt", product.name);
   price.innerHTML = `&#8377; ${product.price}`;
 
   const quantity = getQuantity(product.id) ?? 0;

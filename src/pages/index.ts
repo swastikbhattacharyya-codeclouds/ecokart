@@ -82,7 +82,12 @@ async function addProductsToGrid() {
       <img
         class="h-[250px] w-full object-cover"
         src="${product.imagePath}"
+        width="250"
+        height="250"
+        sizes="(max-width: 768px) 100vw, 250px"
         alt="${product.name}"
+        loading="lazy"
+        decoding="async"
       />
       <div class="flex h-full flex-col gap-y-2 pt-4">
         <div class="flex flex-col gap-y-2 px-4">

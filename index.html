@@ -22,10 +22,14 @@
   </head>
   <body class="flex min-h-dvh flex-col">
     <nav
-      class="sticky top-0 z-50 flex h-16 items-center justify-between bg-orange-50/80 px-[10dvw] py-4 font-[Montserrat] shadow-xl backdrop-blur-sm"
+      class="sticky top-0 z-50 flex h-16 items-center justify-between border-b border-orange-100 bg-orange-50/80 px-[10dvw] py-3 font-[Montserrat] shadow-sm backdrop-blur-lg"
     >
       <div class="w-[24px]"></div>
-      <a href="/" class="text-xl font-bold text-gray-900">EcoKart</a>
+      <a
+        href="/"
+        class="text-xl font-extrabold text-orange-700 transition-colors hover:text-orange-800"
+        >EcoKart</a
+      >
       <div class="relative">
         <a
           href="/checkout"
@@ -33,7 +37,9 @@
           class="cursor-pointer text-2xl text-gray-800 transition hover:text-orange-600"
           aria-label="Cart"
         >
-          <i class="fas fa-shopping-cart"></i>
+          <i
+            class="fas fa-shopping-cart transition-transform duration-200 hover:scale-110"
+          ></i>
         </a>
         <span
           id="cart-count-badge"
@@ -47,8 +53,13 @@
       class="relative flex min-h-[70dvh] items-center py-8 text-white md:min-h-[75dvh]"
     >
       <img
-        class="absolute -z-10 h-full w-full object-cover brightness-30"
         src="hero.jpg"
+        sizes="100vw"
+        alt="EcoKart Hero Banner"
+        width="1600"
+        height="900"
+        decoding="async"
+        class="absolute -z-10 h-full w-full object-cover brightness-30"
       />
       <div
         class="flex flex-col items-center gap-y-6 px-4 text-center sm:max-w-[50dvw] sm:items-start sm:pr-0 sm:pl-[5dvw] sm:text-left"
@@ -146,6 +157,50 @@
           class="hidden h-[40dvh] items-center justify-center text-center font-[Karla] text-xl"
         >
           No Products to Show. Please change your filters.
+        </div>
+      </section>
+      <section
+        id="about"
+        class="mt-16 bg-white px-4 py-16 text-center md:px-[10dvw] md:text-left"
+      >
+        <div
+          class="mx-auto flex max-w-5xl flex-col gap-y-12 md:flex-row md:items-center md:gap-x-16"
+        >
+          <img
+            src="about.jpg"
+            alt="EcoKart Mission"
+            width="600"
+            height="400"
+            loading="lazy"
+            decoding="async"
+            class="mx-auto h-auto w-full max-w-md rounded-lg object-cover shadow-lg md:mx-0"
+          />
+          <div class="flex flex-col gap-y-6">
+            <h2
+              class="font-[Montserrat] text-3xl font-bold text-gray-800 md:text-4xl"
+            >
+              About EcoKart
+            </h2>
+            <p class="font-[Karla] leading-relaxed text-gray-700 md:text-lg">
+              At <strong>EcoKart</strong>, we believe in a future where
+              sustainability is not just an option, but a way of life. Our
+              mission is to make eco-friendly living easy, affordable, and
+              accessible to everyone.
+            </p>
+            <p class="font-[Karla] leading-relaxed text-gray-700 md:text-lg">
+              From reusable essentials to biodegradable alternatives, each
+              product on our platform is handpicked to ensure it aligns with our
+              values: minimal impact, maximum quality. Whether you're starting
+              your sustainable journey or already an eco-conscious shopper,
+              EcoKart is here to support you every step of the way.
+            </p>
+            <a
+              href="#products"
+              class="mx-auto mt-4 inline-block max-w-max rounded-full bg-orange-600 px-8 py-3 font-[Montserrat] font-bold text-white transition hover:bg-orange-500"
+            >
+              Explore Our Products
+            </a>
+          </div>
         </div>
       </section>
     </main>
