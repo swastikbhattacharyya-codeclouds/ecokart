@@ -14,6 +14,13 @@ export function saveCart(cart: Cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+export async function setDiscountCode(code: string) {
+  const cart = fetchCart();
+  if (!cart) return;
+  cart.discountCode = code;
+  saveCart(cart);
+}
+
 export function getQuantity(item: number) {
   const cart = fetchCart();
   if (!cart) return;

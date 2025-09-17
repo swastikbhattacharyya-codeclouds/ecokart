@@ -5,14 +5,29 @@ interface Costs {
   subtotal: number;
   tax: number;
   shipping: number;
+  discount: number;
   total: number;
 }
 
-export function calculateCartCosts(cart: Cart, products: Product[]): Costs {
+interface DiscountCode {
+  code: string;
+  discount: number;
+}
+
+async function getDiscountCodes() {
+  const response = await fetch("discount-codes.json");
+  const codes = await response.json();
+  return codes as DiscountCode[];
+}
+
+export async function calculateCartCosts(
+  cart: Cart,
+  products: Product[],
+): Promise<Costs> {
   let subtotal = 0;
 
   if (Object.entries(cart.items).length === 0)
-    return { subtotal: 0, tax: 0, shipping: 0, total: 0 };
+    return { subtotal: 0, tax: 0, shipping: 0, discount: 0, total: 0 };
 
   for (const [idStr, quantity] of Object.entries(cart.items)) {
     const id = Number(idStr);
@@ -23,11 +38,28 @@ export function calculateCartCosts(cart: Cart, products: Product[]): Costs {
   }
 
   const taxRate = 0.18;
-  const tax = Math.round(subtotal * taxRate);
-
   const shipping = 50;
+  let discount = 0;
 
-  const total = subtotal + tax + shipping;
+  if (cart.discountCode) {
+    const discountCodes = await getDiscountCodes();
+    const matchedCode = discountCodes.find(
+      (d) => d.code.toLowerCase() === cart.discountCode!.toLowerCase(),
+    );
+    if (matchedCode) discount = matchedCode.discount;
+  }
 
-  return { subtotal, tax, shipping, total };
+  const discountAmount = subtotal * discount;
+
+  const discountedSubtotal = Math.max(0, subtotal - discountAmount);
+  const tax = Math.round(discountedSubtotal * taxRate);
+  const total = discountedSubtotal + tax + shipping;
+
+  return {
+    subtotal,
+    tax,
+    shipping,
+    discount: discountAmount,
+    total,
+  };
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "code": "WELCOME10",
+    "discount": 0.1
+  },
+  {
+    "code": "FREESHIP",
+    "discount": 0.05
+  },
+  {
+    "code": "ECOFRIEND19",
+    "discount": 0.19
+  },
+  {
+    "code": "GREENWEEK25",
+    "discount": 0.25
+  },
+  {
+    "code": "SAVE15",
+    "discount": 0.15
+  }
+]

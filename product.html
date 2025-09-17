@@ -26,13 +26,13 @@
     >
       <div class="w-[24px]"></div>
       <a
-        href="/"
+        href="/index.html"
         class="text-xl font-extrabold text-orange-700 transition-colors hover:text-orange-800"
         >EcoKart</a
       >
       <div class="relative">
         <a
-          href="/checkout"
+          href="/checkout.html"
           id="cart-button"
           class="cursor-pointer text-2xl text-gray-800 transition hover:text-orange-600"
           aria-label="Cart"
@@ -57,7 +57,8 @@
           class="relative w-full overflow-hidden rounded-lg max-md:aspect-square max-md:h-auto md:h-full"
         >
           <a
-            href="javascript:history.back()"
+            href="#"
+            onclick="window.location.replace(document.referrer); return false;"
             class="mb-2 flex max-w-max items-center gap-2 rounded-full bg-white px-4 py-2 font-[Karla] text-sm text-gray-700 shadow-md transition hover:bg-gray-100 md:hidden"
           >
             <i class="fas fa-arrow-left"></i>
@@ -74,7 +75,8 @@
         </div>
         <div class="flex flex-col items-start gap-y-8">
           <a
-            href="javascript:history.back()"
+            href="#"
+            onclick="window.location.replace(document.referrer); return false;"
             class="items-center gap-2 rounded-full bg-white px-4 py-2 font-[Karla] text-sm text-gray-700 shadow-md transition hover:bg-gray-100 max-md:hidden md:flex"
           >
             <i class="fas fa-arrow-left"></i>

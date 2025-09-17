@@ -79,20 +79,26 @@ async function addProductsToGrid() {
     card.setAttribute("data-category", product.category);
 
     card.innerHTML = `
-      <img
-        class="h-[250px] w-full object-cover"
-        src="${product.imagePath}"
-        width="250"
-        height="250"
-        sizes="(max-width: 768px) 100vw, 250px"
-        alt="${product.name}"
-        loading="lazy"
-        decoding="async"
-      />
+      <a href="/product.html?id=${product.id}">
+        <img
+          class="h-[250px] w-full object-cover"
+          src="${product.imagePath}"
+          width="250"
+          height="250"
+          sizes="(max-width: 768px) 100vw, 250px"
+          alt="${product.name}"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>   
       <div class="flex h-full flex-col gap-y-2 pt-4">
         <div class="flex flex-col gap-y-2 px-4">
           <div class="flex flex-col gap-y-1">
-            <h1 class="font-[Montserrat] text-xl leading-5 font-bold">${product.name}</h1>
+            <a href="/product.html?id=${product.id}" class="hover:underline">
+              <h1 class="font-[Montserrat] text-xl leading-5 font-bold">
+                ${product.name}
+              </h1>
+            </a>
             <p class="font-[Karla] leading-4 text-gray-700">${product.shortDescription}</p>
           </div>
         </div>
@@ -109,7 +115,7 @@ async function addProductsToGrid() {
             ${renderAddToCartButton(product.id, isInCart)}
             <a
               class="h-[40px] flex justify-center items-center cursor-pointer bg-stone-700 font-[Montserrat] font-bold text-white transition-[background] duration-200 hover:bg-stone-600"
-              href="/product?id=${product.id}"
+              href="/product.html?id=${product.id}"
             >
               View
             </a>

@@ -1,4 +1,9 @@
-import { fetchCart, removeFromCart, setQuantity } from "../cart";
+import {
+  fetchCart,
+  removeFromCart,
+  setDiscountCode,
+  setQuantity,
+} from "../cart";
 import { calculateCartCosts } from "../costs";
 import { fetchProducts } from "../product";
 
@@ -118,7 +123,7 @@ function updateProductPrice(id: number, unitPrice: number) {
 async function updateCartPrices() {
   const cart = fetchCart() ?? { items: [], discountCode: "" };
   const products = await fetchProducts();
-  const costs = calculateCartCosts(cart, products);
+  const costs = await calculateCartCosts(cart, products);
 
   const emptyContainer = document.getElementById("empty-cart");
   if (!emptyContainer) return;
@@ -129,15 +134,26 @@ async function updateCartPrices() {
   const subtotalEl = document.getElementById("cart-subtotal");
   const taxEl = document.getElementById("cart-tax");
   const shippingEl = document.getElementById("cart-shipping");
+  const discountEl = document.getElementById("cart-discount");
   const totalEl = document.getElementById("cart-total");
+
+  console.log(costs.discount);
 
   if (subtotalEl) subtotalEl.textContent = costs.subtotal.toString();
   if (taxEl) taxEl.textContent = costs.tax.toString();
   if (shippingEl) shippingEl.textContent = costs.shipping.toString();
+  if (discountEl) discountEl.textContent = costs.discount.toString();
   if (totalEl) totalEl.textContent = costs.total.toString();
 }
 
 function openOrderReviewDialog() {
+  const cart = fetchCart() || {
+    items: {},
+    discountCode: "",
+  };
+
+  if (Object.keys(cart.items).length === 0) return;
+
   const form = document.querySelector("form") as HTMLFormElement;
 
   if (!form.checkValidity()) {
@@ -151,12 +167,10 @@ function openOrderReviewDialog() {
   const content = document.getElementById("order-review-content");
 
   if (!dialog || !content) return;
-
-  const cart = fetchCart();
   if (!cart || !cart.items) return;
 
-  fetchProducts().then((products) => {
-    const costs = calculateCartCosts(cart, products);
+  fetchProducts().then(async (products) => {
+    const costs = await calculateCartCosts(cart, products);
 
     const cartItemsHTML = Object.entries(cart.items)
       .map(([idStr, qty]) => {
@@ -202,12 +216,26 @@ function openOrderReviewDialog() {
           <div class="flex justify-between"><span>Subtotal</span><span>&#8377; ${costs.subtotal}</span></div>
           <div class="flex justify-between"><span>Tax</span><span>&#8377; ${costs.tax}</span></div>
           <div class="flex justify-between"><span>Shipping</span><span>&#8377; ${costs.shipping}</span></div>
+          <div class="flex justify-between"><span>Discount</span><span>&#8377; -${costs.discount}</span></div>
           <div class="flex justify-between font-bold text-gray-900"><span>Total</span><span>&#8377; ${costs.total}</span></div>
         </div>
       </div>
     `;
 
     dialog.showModal();
+  });
+}
+
+function bindDiscountForm() {
+  const form = document.getElementById("discount-form");
+  const input = document.getElementById("discount-code") as HTMLInputElement;
+  const button = form?.querySelector("button");
+
+  button?.addEventListener("click", async () => {
+    const code = input?.value.trim();
+    if (!code) return;
+    setDiscountCode(code);
+    updateCartPrices();
   });
 }
 
@@ -264,6 +292,13 @@ async function setupCart() {
   document
     .getElementById("place-order-btn")
     ?.addEventListener("click", async () => {
+      const cart = fetchCart() || {
+        items: {},
+        discountCode: "",
+      };
+
+      if (Object.keys(cart.items).length === 0) return;
+
       const name =
         (document.getElementById("name") as HTMLInputElement)?.value || "";
       const email =
@@ -274,12 +309,8 @@ async function setupCart() {
         (document.getElementById("address") as HTMLTextAreaElement)?.value ||
         "";
 
-      const cart = fetchCart() || {
-        items: [],
-        discountCode: "",
-      };
       const products = await fetchProducts();
-      const costs = calculateCartCosts(cart, products);
+      const costs = await calculateCartCosts(cart, products);
       const total = costs.total;
 
       const params = new URLSearchParams({
@@ -290,8 +321,10 @@ async function setupCart() {
         total: total.toString(),
       });
 
-      window.location.href = `/confirmed?${params.toString()}`;
+      window.location.href = `/confirmed.html?${params.toString()}`;
     });
+
+  bindDiscountForm();
 }
 
 setupCart();
