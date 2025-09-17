@@ -6,7 +6,8 @@
     "longDescription": "Our bamboo toothbrush is crafted from sustainably sourced bamboo, offering a renewable and biodegradable alternative to plastic toothbrushes. The handle is smooth, durable, and comfortable to grip, designed for long-term use without contributing to plastic waste.\n\nEach toothbrush features BPA-free nylon bristles that are soft on the gums and effective in removing plaque. It’s suitable for sensitive teeth and gums, making it a safe and eco-friendly choice for the entire family.\n\nThis toothbrush is a simple yet powerful step toward reducing your plastic footprint. Whether you’re starting your zero-waste journey or deep into sustainable living, the bamboo toothbrush is an essential part of your eco-conscious routine.",
     "imagePath": "products/bamboo-toothbrush.jpg",
     "price": 89,
-    "stars": 4.5
+    "stars": 4.5,
+    "category": "Personal & Self Care"
   },
   {
     "id": 1,
@@ -15,7 +16,8 @@
     "longDescription": "The reusable metal straw set is made from premium stainless steel, ensuring durability and reusability for years. It includes straight and bent straws, a cleaning brush, and a compact fabric pouch for portability.\n\nPerfect for cold beverages like iced tea, smoothies, or cocktails, these straws don't alter the taste and are dishwasher-safe. Their sleek, modern look makes them a favorite among eco-conscious users.\n\nCarrying a reusable straw is a simple act of sustainability that reduces the need for disposable plastics. This set empowers you to enjoy your favorite drinks on the go, guilt-free and in style.",
     "imagePath": "products/metal-straws.jpg",
     "price": 199,
-    "stars": 4.7
+    "stars": 4.7,
+    "category": "Lifestyle & Home"
   },
   {
     "id": 2,
@@ -24,7 +26,8 @@
     "longDescription": "Our organic cotton tote bag is made with 100% GOTS-certified cotton, ensuring eco-friendliness from harvest to final stitch. The natural fibers are breathable, washable, and built to last.\n\nFeaturing reinforced handles and a spacious main compartment, this bag can handle heavy groceries, books, or even gym gear. Its minimalist design suits all styles — casual or professional.\n\nDitch single-use plastic bags and switch to a tote that does more. Whether you're at the market, on campus, or out running errands, this bag is your reliable, sustainable companion.",
     "imagePath": "products/cotton-tote.jpg",
     "price": 249,
-    "stars": 4.3
+    "stars": 4.3,
+    "category": "Shopping & Storage"
   },
   {
     "id": 3,
@@ -33,7 +36,8 @@
     "longDescription": "Made from corn starch and other renewable ingredients, these garbage bags break down naturally and completely in home or industrial compost settings. They are a great alternative to petroleum-based plastics.\n\nDespite being compostable, they are strong and puncture-resistant, making them suitable for kitchen waste, office bins, or yard debris. They contain no polyethylene and leave no toxic residue behind.\n\nBy switching to compostable garbage bags, you're contributing to a circular economy. These bags help reduce landfill waste and support a cleaner, greener environment for future generations.",
     "imagePath": "products/compostable-bags.jpg",
     "price": 159,
-    "stars": 4.0
+    "stars": 4.0,
+    "category": "Shopping & Storage"
   },
   {
     "id": 4,
@@ -42,7 +46,8 @@
     "longDescription": "Crafted from natural coconut coir and sustainably harvested wood, this scrubber is your go-to zero-waste tool for dishwashing. Its dense bristles effectively clean without scratching delicate cookware.\n\nIt’s ideal for removing grime from pans, dishes, and even sinks. After months of use, simply compost the scrubber — it breaks down naturally with no harm to the environment.\n\nEach scrubber is handmade and chemical-free, aligning with eco-conscious households. Embrace a greener kitchen by eliminating synthetic scrubbers that contribute to microplastic pollution.",
     "imagePath": "products/coconut-scrubber.jpg",
     "price": 129,
-    "stars": 4.6
+    "stars": 4.6,
+    "category": "Kitchen & Cleaning"
   },
   {
     "id": 5,
@@ -51,7 +56,8 @@
     "longDescription": "These beeswax wraps are handcrafted using organic cotton coated with a mixture of beeswax, jojoba oil, and tree resin. They are breathable, flexible, and naturally antimicrobial, keeping your food fresher for longer.\n\nUse them to wrap fruits, vegetables, sandwiches, or to cover bowls. They mold with the warmth of your hands and wash clean with cool water and mild soap.\n\nNot only do they reduce plastic use in the kitchen, but they also add charm with their beautiful patterns. Reuse them for up to a year before composting — truly a waste-free food storage solution.",
     "imagePath": "products/beeswax-wraps.jpg",
     "price": 349,
-    "stars": 4.8
+    "stars": 4.8,
+    "category": "Kitchen & Cleaning"
   },
   {
     "id": 6,
@@ -60,7 +66,8 @@
     "longDescription": "These notebooks are made with handmade seed paper embedded with wildflower seeds. After use, plant the pages in soil, water them, and watch beautiful flowers grow. It's the perfect gift for writers, students, or eco-enthusiasts.\n\nEach notebook features recycled cardboard covers and non-toxic dyes. The pages are thick enough for writing, drawing, or journaling and bring a rustic, artisanal touch to your desk.\n\nGive your notes a second life as a blooming garden. It’s an innovative approach to sustainable stationery that encourages both creativity and ecological responsibility.",
     "imagePath": "products/seed-notebooks.jpg",
     "price": 179,
-    "stars": 4.2
+    "stars": 4.2,
+    "category": "Lifestyle & Home"
   },
   {
     "id": 7,
@@ -69,7 +76,8 @@
     "longDescription": "These mesh produce bags are made from organic cotton and come in various sizes. They are strong yet breathable, allowing fruits and vegetables to stay fresh longer by reducing moisture buildup.\n\nEach bag includes a drawstring closure for convenience and is machine-washable. They're also lightweight and foldable, making them easy to carry on shopping trips or store at home.\n\nReplacing plastic produce bags with these reusables helps eliminate single-use waste from your kitchen and supports a sustainable shopping routine that aligns with modern eco values.",
     "imagePath": "products/produce-bags.jpg",
     "price": 269,
-    "stars": 4.4
+    "stars": 4.4,
+    "category": "Shopping & Storage"
   },
   {
     "id": 8,
@@ -78,7 +86,8 @@
     "longDescription": "Add charm to your outdoor spaces with these solar-powered garden lights. They charge during the day and automatically light up at night, illuminating pathways, flower beds, and patios without electricity.\n\nThe lights are waterproof, weather-resistant, and easy to install with no wiring required. They offer warm ambient lighting while reducing your carbon footprint.\n\nWhether you're hosting a garden party or just enjoying a quiet evening outside, these lights provide an eco-friendly glow that enhances your space without increasing your energy bill.",
     "imagePath": "products/solar-lights.jpg",
     "price": 749,
-    "stars": 4.1
+    "stars": 4.1,
+    "category": "Lifestyle & Home"
   },
   {
     "id": 9,
@@ -87,7 +96,8 @@
     "longDescription": "This biodegradable phone case is made from flax shive and biopolymer, offering protection for your device and the planet. It's sturdy, flexible, and designed to absorb shocks without contributing to plastic waste.\n\nIt fits snugly around your phone, offering full access to ports, buttons, and camera. Once you're done with it, compost the case to return it to the Earth.\n\nPerfect for those who want style, durability, and sustainability in one. Available in various colors, this case proves that eco-friendly choices can be both functional and fashionable.",
     "imagePath": "products/eco-phone-case.jpg",
     "price": 599,
-    "stars": 4.6
+    "stars": 4.6,
+    "category": "Personal & Self Care"
   },
   {
     "id": 10,
@@ -96,7 +106,8 @@
     "longDescription": "Each of these coconut bowls is hand-carved from discarded coconut shells, giving a second life to what would otherwise be agricultural waste. They are polished with natural coconut oil and contain no chemicals.\n\nPerfect for smoothie bowls, salads, snacks, and more — they're a beautiful, biodegradable addition to any kitchen. No two bowls are the same, giving each one a unique pattern and character.\n\nUsing coconut bowls is a stylish way to embrace minimalism and zero-waste living. They're a reminder that beauty and sustainability can coexist in everyday objects.",
     "imagePath": "products/coconut-bowl.jpg",
     "price": 329,
-    "stars": 4.5
+    "stars": 4.5,
+    "category": "Kitchen & Cleaning"
   },
   {
     "id": 11,
@@ -105,6 +116,7 @@
     "longDescription": "The natural loofah sponge is derived from the loofah plant, making it completely biodegradable and compostable. It’s gentle on skin yet effective at exfoliating, leaving you refreshed and clean after every bath.\n\nIt can also double as a dish scrubber, offering a zero-waste alternative to synthetic sponges. Just soak it in water before use, and it expands to a soft yet firm texture.\n\nWhether in the kitchen or bathroom, this multi-purpose sponge is a sustainable swap that reduces microplastic pollution and promotes an all-natural cleaning experience.",
     "imagePath": "products/loofah-sponge.jpg",
     "price": 99,
-    "stars": 4.3
+    "stars": 4.3,
+    "category": "Personal & Self Care"
   }
 ]

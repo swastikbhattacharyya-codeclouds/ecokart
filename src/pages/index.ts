@@ -76,6 +76,7 @@ async function addProductsToGrid() {
     const card = document.createElement("div");
     card.className =
       "product-card flex w-full max-w-[325px] flex-col overflow-hidden rounded-md shadow-xl";
+    card.setAttribute("data-category", product.category);
 
     card.innerHTML = `
       <img
@@ -145,9 +146,80 @@ function setupCart() {
   updateCartCount();
 }
 
+function setupFilters() {
+  const input = document.querySelector<HTMLInputElement>("#search-input");
+  const select = document.querySelector<HTMLSelectElement>("#category-select");
+  const productCards =
+    document.querySelectorAll<HTMLDivElement>(".product-card");
+
+  if (!input || !select) return;
+
+  const applyFilters = () => {
+    const searchTerm = input.value.trim().toLowerCase();
+    const selectedCategory = select.value;
+    let flag = false;
+
+    productCards.forEach((card) => {
+      const name = card.querySelector("h1")?.textContent?.toLowerCase() || "";
+      const category = card.getAttribute("data-category") || "";
+
+      const matchesSearch = name.includes(searchTerm);
+      const matchesCategory =
+        !selectedCategory || category === selectedCategory;
+
+      if (matchesSearch && matchesCategory) {
+        card.classList.remove("hidden");
+        flag = true;
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+    const noProducts = document.querySelector("#no-products");
+    if (!noProducts) return;
+
+    if (!flag) {
+      noProducts.classList.remove("hidden");
+      noProducts.classList.add("flex");
+    } else {
+      noProducts.classList.add("hidden");
+      noProducts.classList.remove("flex");
+      noProducts.classList.add("hidden");
+      noProducts.classList.remove("flex");
+    }
+  };
+
+  input.addEventListener("input", applyFilters);
+  select.addEventListener("change", applyFilters);
+
+  applyFilters();
+}
+
+function setupClearFilters() {
+  const clearButton =
+    document.querySelector<HTMLButtonElement>("#clear-filters-btn");
+  const input = document.querySelector<HTMLInputElement>("#search-input");
+  const select = document.querySelector<HTMLSelectElement>("#category-select");
+
+  if (!clearButton || !input || !select) return;
+
+  clearButton.addEventListener("click", () => {
+    console.log("Click");
+    input.value = "";
+    select.value = "";
+
+    const event = new Event("input");
+    input.dispatchEvent(event);
+
+    const changeEvent = new Event("change");
+    select.dispatchEvent(changeEvent);
+  });
+}
+
 async function indexPage() {
   await addProductsToGrid();
   setupCart();
+  setupFilters();
+  setupClearFilters();
 }
 
 indexPage();

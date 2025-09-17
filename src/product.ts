@@ -6,6 +6,7 @@ export interface Product {
   imagePath: string;
   price: number;
   stars: number;
+  category: string;
 }
 
 export async function fetchProducts(): Promise<Product[]> {
