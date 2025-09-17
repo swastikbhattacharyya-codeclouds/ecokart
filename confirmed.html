@@ -23,7 +23,9 @@
   <body
     class="flex min-h-screen items-center justify-center bg-orange-50/50 px-4 font-[Karla] text-gray-800"
   >
-    <div class="w-full max-w-xl rounded-md bg-white p-6 shadow-lg">
+    <div
+      class="max-h-[80dvh] w-full max-w-xl overflow-y-auto rounded-md bg-white p-6 shadow-lg"
+    >
       <div class="flex flex-col items-center text-center">
         <div class="mb-4 text-4xl text-green-600">
           <i class="fas fa-check-circle"></i>
@@ -72,18 +74,6 @@
         </a>
       </div>
     </div>
-
-    <script>
-      function getParam(name) {
-        const url = new URLSearchParams(window.location.search);
-        return url.get(name) || "-";
-      }
-
-      document.getElementById("name").textContent = getParam("name");
-      document.getElementById("email").textContent = getParam("email");
-      document.getElementById("phone").textContent = getParam("phone");
-      document.getElementById("address").textContent = getParam("address");
-      document.getElementById("total").textContent = getParam("total");
-    </script>
+    <script type="module" src="src/pages/confirmed.ts"></script>
   </body>
 </html>

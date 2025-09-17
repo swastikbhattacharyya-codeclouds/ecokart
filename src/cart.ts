@@ -55,7 +55,7 @@ export function removeFromCart(item: number) {
 
 export function clearCart() {
   const cart: Cart = {
-    items: [],
+    items: {},
     discountCode: "",
   };
 

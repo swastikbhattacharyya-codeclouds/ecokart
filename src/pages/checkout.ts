@@ -1,4 +1,4 @@
-import { clearCart, fetchCart, removeFromCart, setQuantity } from "../cart";
+import { fetchCart, removeFromCart, setQuantity } from "../cart";
 import { calculateCartCosts } from "../costs";
 import { fetchProducts } from "../product";
 
@@ -287,8 +287,6 @@ async function setupCart() {
         address,
         total: total.toString(),
       });
-
-      clearCart();
 
       window.location.href = `/confirmed?${params.toString()}`;
     });

@@ -9,27 +9,30 @@ import { fetchProductDetails } from "../product";
 
 export function renderQtySelector(itemId: number, quantity: number): string {
   return `
-    <div
-      class="cart-qty-selector relative flex h-[40px] flex-grow items-center rounded-lg overflow-hidden bg-gray-300 font-[Montserrat] font-bold text-black"
+    <div 
+      class="cart-qty-selector flex items-center gap-1 rounded-md border border-gray-300 px-2 py-1"
       data-id="${itemId}"
     >
       <button
-        class="decrement-btn aspect-square w-auto h-full flex items-center justify-center bg-red-600 hover:bg-red-500 rounded-lg transition-[background] duration-200 cursor-pointer"
         type="button"
+        class="decrement-btn text-gray-600 hover:text-orange-600 disabled:opacity-50"
+        aria-label="Decrease quantity"
       >
-        −
+        <i class="fas fa-minus"></i>
       </button>
       <input
+        readonly
         type="number"
-        min="1"
         value="${quantity}"
-        class="max-w-[100px] text-center outline-none h-full quantity-input mx-2 w-full flex-grow"
+        min="1"
+        class="quantity-input w-10 border-none text-center text-sm text-gray-800 focus:outline-none cursor-default"
       />
       <button
-        class="increment-btn aspect-square w-auto h-full flex items-center justify-center bg-green-600 hover:bg-green-500 rounded-lg transition-[background] duration-200 cursor-pointer"
         type="button"
+        class="increment-btn text-gray-600 hover:text-orange-600"
+        aria-label="Increase quantity"
       >
-        +
+        <i class="fas fa-plus"></i>
       </button>
     </div>
   `;
@@ -63,7 +66,7 @@ function animateFlyToCart(event: MouseEvent, sourceImage: HTMLImageElement) {
 
   document.body.appendChild(flyingImg);
 
-  flyingImg.getBoundingClientRect(); // force layout reflow
+  flyingImg.getBoundingClientRect();
 
   flyingImg.style.left = cartRect.left + cartRect.width / 2 + "px";
   flyingImg.style.top = cartRect.top + cartRect.height / 2 + "px";
