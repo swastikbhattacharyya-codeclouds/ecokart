@@ -2,7 +2,7 @@ class AppFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <footer
-        class="flex flex-col gap-y-4 px-8 pt-4 pb-20 font-[Karla] md:px-[15dvw] md:pt-8 lg:pb-8"
+        class="flex flex-col gap-y-4 px-8 pt-4 pb-20 font-[Karla] shadow-[-2px_-2px_8px_rgba(0,0,0,0.1)] md:px-[15dvw] md:pt-8 lg:pb-8"
       >
         <div class="flex flex-col gap-y-8 md:grid md:grid-cols-3 md:gap-x-4">
           <div class="flex flex-col gap-y-2">
