@@ -3,7 +3,7 @@ class HamburgerNav extends HTMLElement {
     this.innerHTML = `
       <aside
         id="hamburger-nav"
-        class="absolute top-0 left-0 hidden h-dvh w-[80dvw] max-w-[300px] -translate-x-full flex-col bg-white shadow-xl transition-all duration-200 lg:hidden"
+        class="z-50 absolute top-0 left-0 hidden h-dvh w-[80dvw] max-w-[300px] -translate-x-full flex-col bg-white shadow-xl transition-all duration-200 lg:hidden"
         data-state="closed"
       >
         <div class="flex items-center-safe p-4">
