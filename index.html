@@ -13,14 +13,15 @@
     />
   </head>
   <body class="min-h-dvh">
-    <header>
-      <top-bar></top-bar>
-      <header-bar></header-bar>
-    </header>
+    <top-bar></top-bar>
     <hamburger-nav></hamburger-nav>
-    <app-nav></app-nav>
+    <header class="sticky top-0 z-40 bg-white shadow-xl">
+      <header-bar></header-bar>
+      <app-nav></app-nav>
+    </header>
     <hero-section></hero-section>
 
+    <app-footer></app-footer>
     <bottom-bar></bottom-bar>
 
     <script type="module" src="https://unpkg.com/lucide@latest" defer></script>
