@@ -41,7 +41,7 @@ class CategorySection extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <section
-        class="flex flex-col gap-y-4 px-8 py-16 sm:px-[5dvw] lg:px-[15dvw]"
+        class="flex flex-col gap-y-4 px-8 pt-16 pb-4 sm:px-[5dvw] lg:px-[15dvw]"
       >
         <h2 class="text-center font-[Montserrat] text-2xl font-bold">
           Shop by Category
