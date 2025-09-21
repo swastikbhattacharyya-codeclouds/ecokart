@@ -9,7 +9,7 @@ class NewsletterSection extends HTMLElement {
           class="flex w-[90dvw] max-w-[500px] flex-col gap-2 md:flex-row md:justify-center-safe"
         >
           <input
-            class="border border-gray-300 p-2 font-[Karla] outline-none"
+            class="border border-gray-300 p-2 font-[Karla] outline-none placeholder:text-center"
             type="email"
             placeholder="Your email address"
           />
