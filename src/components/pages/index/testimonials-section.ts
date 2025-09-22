@@ -13,7 +13,7 @@ class TestimonialsSection extends HTMLElement {
           </p>
         </div>
         <div
-          class="grid gap-4 px-4 py-8 max-md:grid-rows-3 sm:grid-cols-3 md:px-[5dvw] lg:px-[15dvw]"
+          class="grid gap-4 px-4 py-8 max-sm:grid-rows-3 sm:grid-cols-3 md:px-[5dvw] lg:px-[15dvw]"
         >
           <testimonial-card
             data-quote="I’ve been slowly switching to a zero-waste lifestyle, and EcoKart made it so easy. Their packaging is minimal and plastic-free, and every product I’ve tried has been durable and well-made. I especially love the reusable straws—they even come with a cleaning brush!"
