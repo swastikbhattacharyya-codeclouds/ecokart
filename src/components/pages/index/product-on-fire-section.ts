@@ -8,7 +8,7 @@ class ProductOnFireSection extends HTMLElement {
           Product on Fire
         </h3>
         <div
-          class="flex-co flex gap-8 max-md:items-center-safe md:grid md:grid-cols-2"
+          class="flex-col flex gap-8 max-md:items-center-safe md:grid md:grid-cols-2"
         >
           <div
             class="max-w-[300px] overflow-hidden rounded-md md:justify-self-end-safe"
