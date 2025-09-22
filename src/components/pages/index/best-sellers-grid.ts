@@ -1,3 +1,4 @@
+import { hideGrid, showGrid } from "../../../utils/anim.ts";
 import "./product-card.ts";
 
 class BestSellersGrid extends HTMLElement {
@@ -54,7 +55,7 @@ class BestSellersGrid extends HTMLElement {
     this.innerHTML = `
       <div
         id="best-sellers-grid"
-        class="grid grid-cols-2 gap-4 lg:grid-cols-3"
+        class="grid grid-cols-2 gap-4 lg:grid-cols-3 transition-all duration-300"
       />
     `;
 
@@ -67,6 +68,13 @@ class BestSellersGrid extends HTMLElement {
         "beforeend",
         `<product-card data-name="${product.name}" data-category="${product.category}" data-img="${product.imgSrc}" data-price="${product.price}"><product-card>`,
       );
+    });
+
+    document.addEventListener("featured-select", function (event) {
+      const category = (event as CustomEvent<{ category: string }>).detail
+        .category;
+      if (category === "best-sellers") showGrid(bestSellersGrid);
+      else hideGrid(bestSellersGrid);
     });
   }
 }

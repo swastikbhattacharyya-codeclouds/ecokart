@@ -1,3 +1,4 @@
+import { hideGrid, showGrid } from "../../../utils/anim.ts";
 import "./product-card.ts";
 
 class TrendingGrid extends HTMLElement {
@@ -54,19 +55,25 @@ class TrendingGrid extends HTMLElement {
     this.innerHTML = `
       <div
         id="trending-grid"
-        class="grid-cols-2 gap-4 lg:grid-cols-3 hidden"
+        class="grid-cols-2 gap-4 lg:grid-cols-3 hidden -translate-x-16 opacity-0 transition-all duration-300"
       />
     `;
 
-    const bestSellersGrid =
+    const trendingGrid =
       document.querySelector<HTMLDivElement>("#trending-grid");
-    if (!bestSellersGrid) return;
+    if (!trendingGrid) return;
 
     this.products.forEach(function (product) {
-      bestSellersGrid.insertAdjacentHTML(
+      trendingGrid.insertAdjacentHTML(
         "beforeend",
         `<product-card data-name="${product.name}" data-category="${product.category}" data-img="${product.imgSrc}" data-price="${product.price}"><product-card>`,
       );
+    });
+    document.addEventListener("featured-select", function (event) {
+      const category = (event as CustomEvent<{ category: string }>).detail
+        .category;
+      if (category === "trending") showGrid(trendingGrid);
+      else hideGrid(trendingGrid);
     });
   }
 }

@@ -1,4 +1,5 @@
 import "./product-card.ts";
+import { hideGrid, showGrid } from "../../../utils/anim.ts";
 
 class NewArrivalsGrid extends HTMLElement {
   private readonly products: {
@@ -54,19 +55,26 @@ class NewArrivalsGrid extends HTMLElement {
     this.innerHTML = `
       <div
         id="new-arrivals-grid"
-        class="grid-cols-2 gap-4 lg:grid-cols-3 hidden"
+        class="grid-cols-2 gap-4 lg:grid-cols-3 hidden -translate-x-16 opacity-0 transition-all duration-300"
       />
     `;
 
-    const bestSellersGrid =
+    const newArrivalsGrid =
       document.querySelector<HTMLDivElement>("#new-arrivals-grid");
-    if (!bestSellersGrid) return;
+    if (!newArrivalsGrid) return;
 
     this.products.forEach(function (product) {
-      bestSellersGrid.insertAdjacentHTML(
+      newArrivalsGrid.insertAdjacentHTML(
         "beforeend",
         `<product-card data-name="${product.name}" data-category="${product.category}" data-img="${product.imgSrc}" data-price="${product.price}"><product-card>`,
       );
+    });
+
+    document.addEventListener("featured-select", function (event) {
+      const category = (event as CustomEvent<{ category: string }>).detail
+        .category;
+      if (category === "new-arrivals") showGrid(newArrivalsGrid);
+      else hideGrid(newArrivalsGrid);
     });
   }
 }

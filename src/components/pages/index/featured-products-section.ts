@@ -67,6 +67,7 @@ class FeaturedProductsSection extends HTMLElement {
           .replace(/\s+/g, "-");
         this.dispatchEvent(
           new CustomEvent("featured-select", {
+            bubbles: true,
             detail: { category },
           }),
         );
