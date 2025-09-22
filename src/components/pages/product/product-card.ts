@@ -7,13 +7,13 @@ class ProductCard extends HTMLElement {
 
     this.innerHTML = `
       <div class="flex flex-col items-center-safe gap-y-2">
-        <a href="/product.html" class="max-h-[300px] max-w-[300px] overflow-hidden rounded-md">
+        <div class="max-h-[300px] max-w-[300px] overflow-hidden rounded-md">
           <img class="cursor-pointer" src="${imgSrc}" />
-        </a>
+        </div>
         <div class="flex flex-col items-center-safe">
-          <a href="/product.html" class="text-center font-[Montserrat] font-bold">
+          <h3 class="text-center font-[Montserrat] font-bold">
             ${name}
-          </a>
+          </h3>
           <p class="text-center font-[Karla] text-sm text-gray-500">
             ${category}
           </p>
