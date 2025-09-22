@@ -26,7 +26,7 @@ class ProductOnFireSection extends HTMLElement {
               Reusable Beeswax Food Wraps are flying off the shelves — and for
               good reason.
             </p>
-            <p class="font-[Karla]">
+            <p class="font-[Karla] max-md:text-center">
               Don’t miss out! Grab your set now and join the movement towards a
               greener, cleaner kitchen.
             </p>
