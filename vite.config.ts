@@ -9,6 +9,7 @@ export default defineConfig({
         main: "./index.html",
         product: "./product.html",
         cart: "./cart.html",
+        confirm: "./confirm.html",
       },
     },
   },
