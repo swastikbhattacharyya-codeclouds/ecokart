@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="src/style.css" rel="stylesheet" />
+    <title>EcoKart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="flex min-h-dvh flex-col">
+    <top-bar></top-bar>
+    <hamburger-nav></hamburger-nav>
+    <header class="sticky top-0 z-40 bg-[#f4f4f4] shadow-xl">
+      <header-bar></header-bar>
+      <app-nav></app-nav>
+    </header>
+    <hero-section></hero-section>
+
+    <main class="flex flex-grow flex-col gap-y-4 py-8">
+      <section class="flex flex-col px-4 md:px-[5dvw] lg:px-[15dvw]">
+        <h1 class="my-4 font-[Montserrat] text-4xl font-bold">Your Cart</h1>
+        <cart-section></cart-section>
+      </section>
+    </main>
+
+    <app-footer></app-footer>
+    <bottom-bar></bottom-bar>
+
+    <script type="module" src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="src/pages/cart.ts"></script>
+  </body>
+</html>

@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: "./index.html",
         product: "./product.html",
+        cart: "./cart.html",
       },
     },
   },

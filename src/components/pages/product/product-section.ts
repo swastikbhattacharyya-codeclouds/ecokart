@@ -162,7 +162,6 @@ class ProductSection extends HTMLElement {
     };
 
     updateUI();
-
     this.addEventListener("cart-updated", updateUI);
   }
 }

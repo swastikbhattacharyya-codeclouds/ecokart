@@ -15,6 +15,7 @@ class HamburgerNav extends HTMLElement {
         </div>
         <nav class="flex flex-col font-[Karla]">
           <a
+            href="/index.html"
             class="border-t border-b border-t-gray-300 border-b-gray-300 px-4 py-2"
             >Home</a
           >
