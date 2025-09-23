@@ -1,8 +1,10 @@
 import "./product-card.ts";
 import { hideGrid, showGrid } from "../../../utils/anim.ts";
+import ProductService from "../../../product.ts";
 
 class NewArrivalsGrid extends HTMLElement {
   private readonly products: {
+    id: number;
     name: string;
     category: string;
     imgSrc: string;
@@ -11,47 +13,27 @@ class NewArrivalsGrid extends HTMLElement {
 
   constructor() {
     super();
-    this.products = [
-      {
-        name: "Reusable Beeswax Food Wraps",
-        category: "Home Goods",
-        imgSrc: "products/reusable-beeswax-food-wraps.jpg",
-        price: 250,
-      },
-      {
-        name: "Bamboo Toothbrushes",
-        category: "Personal Care",
-        imgSrc: "products/bamboo-toothbrushes.jpg",
-        price: 150,
-      },
-      {
-        name: "Compostable Trash Bags",
-        category: "Home Goods",
-        imgSrc: "products/compostable-trash-bags.jpg",
-        price: 50,
-      },
-      {
-        name: "Refillable Cleaning Products",
-        category: "Home Goods",
-        imgSrc: "products/refillable-cleaning-products.jpg",
-        price: 75,
-      },
-      {
-        name: "Stainless Steel Straws",
-        category: "Home Goods",
-        imgSrc: "products/stainless-steel-straws.jpg",
-        price: 100,
-      },
-      {
-        name: "Eco Laundry Cleaning Sheets",
-        category: "Home Goods",
-        imgSrc: "products/eco-laundry-cleaning-sheets.jpg",
-        price: 125,
-      },
-    ];
+    this.products = [];
   }
 
-  connectedCallback() {
+  async connectedCallback() {
+    const productIds = [1, 4, 15, 25, 28, 7];
+    const fetchedProducts = await ProductService.getAllProducts();
+
+    const shownProducts = fetchedProducts.filter((product) =>
+      productIds.includes(product.id),
+    );
+
+    shownProducts.forEach((product) => {
+      this.products.push({
+        id: product.id,
+        name: product.name,
+        category: product.categoryName ?? "",
+        imgSrc: product.imgPath,
+        price: product.price,
+      });
+    });
+
     this.innerHTML = `
       <div
         id="new-arrivals-grid"
@@ -66,7 +48,7 @@ class NewArrivalsGrid extends HTMLElement {
     this.products.forEach(function (product) {
       newArrivalsGrid.insertAdjacentHTML(
         "beforeend",
-        `<product-card data-name="${product.name}" data-category="${product.category}" data-img="${product.imgSrc}" data-price="${product.price}"><product-card>`,
+        `<product-card data-id="${product.id}" data-name="${product.name}" data-category="${product.category}" data-img="${product.imgSrc}" data-price="${product.price}"><product-card>`,
       );
     });
 

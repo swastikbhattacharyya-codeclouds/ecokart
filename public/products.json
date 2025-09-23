@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "name": "Reusable Beeswax Food Wraps",
+    "price": 1245.0,
+    "shortDescription": "Wrap your food the eco-friendly way with our Reusable Beeswax Food Wraps — made from organic cotton and natural beeswax. These breathable, antibacterial wraps keep your food fresh longer and are reusable for up to a year, helping you reduce plastic waste without sacrificing convenience.",
+    "longDescription": "Say goodbye to single-use plastics and hello to sustainable food storage. Our Reusable Beeswax Food Wraps are handcrafted from 100% organic cotton, sustainably harvested beeswax, jojoba oil, and tree resin. The result is a naturally antibacterial and breathable wrap that keeps your food fresher for longer — no harmful chemicals, no waste. Perfect for wrapping fruits, vegetables, cheese, sandwiches, or covering bowls, these wraps mold effortlessly with the warmth of your hands and hold their shape as they cool. They're easy to clean with cold water and mild soap, and can be reused for up to 12 months. When it’s time to say goodbye, simply compost them — they’re biodegradable and zero-waste. Make a simple yet impactful switch in your kitchen. Whether you're packing a school lunch, storing leftovers, or keeping snacks fresh on the go, our beeswax wraps offer a stylish, sustainable solution that aligns with your values. Join the movement toward a cleaner planet — one wrap at a time.",
+    "imgPath": "/products/reusable-beeswax-food-wraps.jpg",
+    "sku": "HG-001",
+    "categoryId": 1
+  },
+  {
+    "id": 2,
+    "name": "Compostable Trash Bags",
+    "price": 790.0,
+    "shortDescription": "Dispose of your waste responsibly with our Compostable Trash Bags — crafted from plant-based materials and designed to break down quickly in commercial or home composting systems. Strong, leak-resistant, and ideal for a zero-waste lifestyle.",
+    "longDescription": "Ditch plastic garbage bags and choose a compostable solution that supports a cleaner planet. Our Compostable Trash Bags are made from cornstarch and other renewable bio-based materials that fully break down in industrial or backyard compost environments. Engineered for durability, they hold household and kitchen waste securely without tears or leaks. These bags meet ASTM D6400 standards and contain no polyethylene or harmful chemicals. Ideal for food scraps, garden waste, or general use, they make green living easier without compromising function. They're the perfect choice for eco-conscious homes and businesses seeking sustainable waste disposal solutions. Transitioning to compostable trash bags is one of the simplest steps toward reducing landfill waste. Make every toss count — clean living starts here.",
+    "imgPath": "/products/compostable-trash-bags.jpg",
+    "sku": "HG-002",
+    "categoryId": 1
+  },
+  {
+    "id": 3,
+    "name": "Refillable Cleaning Products",
+    "price": 1655.0,
+    "shortDescription": "Clean green with our Refillable Cleaning Products — powerful, plant-based formulas delivered in reusable bottles. Say goodbye to single-use plastic and keep your home spotless with sustainable, eco-friendly ingredients that work.",
+    "longDescription": "Say goodbye to plastic waste and toxic cleaners. Our Refillable Cleaning Products are the ultimate eco-upgrade for your household routine. Each starter kit includes a reusable glass spray bottle and concentrated, plant-based cleaner capsules that dissolve in water. Designed for versatility and safety, they effectively tackle dirt, grime, and grease on surfaces from kitchens to bathrooms. With natural scents and biodegradable ingredients, you can clean confidently without synthetic fragrances, dyes, or harmful residues. Refills come in compostable packaging, reducing your environmental footprint with every use. These products are cruelty-free, non-toxic, and septic-safe — safe for pets and kids too. Join the refill revolution and enjoy cleaning that’s better for your home and the planet. Make sustainability your everyday standard.",
+    "imgPath": "/products/refillable-cleaning-products.jpg",
+    "sku": "HG-003",
+    "categoryId": 1
+  },
+  {
+    "id": 4,
+    "name": "Eco Laundry Cleaning Sheets",
+    "price": 1080.0,
+    "shortDescription": "Simplify laundry day with Eco Laundry Cleaning Sheets — lightweight, mess-free, and biodegradable. These pre-measured sheets dissolve instantly in water, delivering powerful cleaning performance without plastic jugs or harmful chemicals.",
+    "longDescription": "Make your laundry routine lighter on the planet. Our Eco Laundry Cleaning Sheets offer a compact, plastic-free solution to traditional detergent. Formulated with non-toxic, biodegradable ingredients, each sheet dissolves quickly in hot or cold water to tackle stains, odors, and grime. They’re hypoallergenic, vegan, and safe for sensitive skin — no dyes, parabens, or phosphates. The lightweight design reduces transport emissions and packaging waste, while the recyclable kraft paper packaging further cuts down on plastic pollution. Perfect for travel, small spaces, or everyday use, they combine convenience with conscious living. Go beyond clean clothes — choose laundry that supports a cleaner world. Simple, effective, and sustainably made.",
+    "imgPath": "/products/eco-laundry-cleaning-sheets.jpg",
+    "sku": "HG-004",
+    "categoryId": 1
+  },
+  {
+    "id": 5,
+    "name": "Recycled Glass Storage Jars",
+    "price": 1990.0,
+    "shortDescription": "Store in style with our Recycled Glass Storage Jars — perfect for pantry staples, snacks, or homemade goods. Crafted from post-consumer glass and topped with bamboo lids, they bring beauty and sustainability to your kitchen.",
+    "longDescription": "Reimagine your kitchen storage with our Recycled Glass Storage Jars. Made from 100% post-consumer recycled glass and topped with airtight bamboo lids, these jars combine functionality with planet-friendly design. Ideal for dry goods like grains, pasta, coffee, and spices, they help reduce single-use packaging and keep your pantry organized. Each jar is dishwasher safe, BPA-free, and crafted without any virgin plastic. Their minimal aesthetic fits beautifully in modern, rustic, or zero-waste kitchens. The bamboo lids have a silicone seal to lock in freshness and flavor. Whether you're refilling at the bulk store or displaying your homemade granola, these jars help reduce your environmental footprint — one refill at a time.",
+    "imgPath": "/products/recycled-glass-storage-jars.jpg",
+    "sku": "HG-005",
+    "categoryId": 1
+  },
+  {
+    "id": 6,
+    "name": "Organic Cotton Dish Towels",
+    "price": 1285.0,
+    "shortDescription": "Dry your dishes the eco way with our Organic Cotton Dish Towels — soft, absorbent, and made from GOTS-certified cotton. These long-lasting towels are a sustainable upgrade for every zero-waste kitchen.",
+    "longDescription": "Refresh your kitchen essentials with our Organic Cotton Dish Towels — woven from 100% GOTS-certified organic cotton for superior softness and absorbency. Unlike synthetic blends, these towels are free from pesticides, dyes, and microplastics, making them safer for your home and the environment. They’re perfect for drying dishes, wiping counters, or even wrapping fresh bread. Durable and machine washable, they’re built to last through hundreds of uses, reducing the need for paper towels and plastic-laden alternatives. Their classic weave and natural color palette add a touch of elegance to eco-conscious homes. Make a simple swap that makes a big difference — one towel at a time.",
+    "imgPath": "/products/organic-dish-towels.jpg",
+    "sku": "HG-006",
+    "categoryId": 1
+  },
+  {
+    "id": 7,
+    "name": "Bamboo Toothbrushes",
+    "price": 399.0,
+    "shortDescription": "Upgrade your oral care with Bamboo Toothbrushes — made from biodegradable bamboo and BPA-free bristles. A plastic-free alternative that keeps your smile bright and the planet clean.",
+    "longDescription": "Rethink your morning routine with our Bamboo Toothbrushes — a sustainable essential crafted from fast-growing, renewable bamboo. These toothbrushes feature soft, BPA-free bristles for a gentle yet effective clean, making them suitable for adults and kids alike. The ergonomic handle provides a comfortable grip while reducing plastic waste in landfills and oceans. Fully compostable (except bristles), these brushes are an ideal swap for conscious consumers. Each toothbrush comes in recyclable, plastic-free packaging and lasts just as long as a conventional brush. Make brushing better for the earth with every smile. It’s a small step toward a cleaner future, one brush at a time.",
+    "imgPath": "/products/bamboo-toothbrushes.jpg",
+    "sku": "PC-001",
+    "categoryId": 2
+  },
+  {
+    "id": 8,
+    "name": "Stainless Steel Straws",
+    "price": 599.0,
+    "shortDescription": "Sip sustainably with Stainless Steel Straws — durable, reusable, and easy to clean. A stylish, zero-waste alternative to single-use plastic straws for drinks on the go or at home.",
+    "longDescription": "Ditch plastic straws for good with our Stainless Steel Straws — a sleek, reusable upgrade for your daily drinks. Crafted from food-grade stainless steel, these straws are rust-resistant, BPA-free, and built to last. Ideal for smoothies, juices, coffee, or cocktails, they come with a cleaning brush and cotton pouch for easy transport and care. Unlike plastic, they don’t leach chemicals or absorb flavors, making them a safe and sustainable choice. Dishwasher safe and endlessly reusable, they're perfect for eco-conscious households, cafes, or travel kits. Make every sip a statement — elegant, eco-friendly, and endlessly recyclable.",
+    "imgPath": "/products/stainless-steel-straws.jpg",
+    "sku": "PC-002",
+    "categoryId": 2
+  },
+  {
+    "id": 9,
+    "name": "Plastic Free Shampoo Bars",
+    "price": 499.0,
+    "shortDescription": "Cleanse your hair naturally with our Plastic-Free Shampoo Bars — packed with nourishing oils and botanicals. Zero plastic, zero waste, and perfect for travel or everyday use.",
+    "longDescription": "Elevate your hair care with our Plastic-Free Shampoo Bars — a sustainable alternative to bottled shampoos. Each bar is handcrafted with coconut oil, shea butter, and essential oils to gently cleanse and nourish all hair types. Free from sulfates, parabens, and synthetic fragrances, they lather luxuriously and leave your hair soft and refreshed. Ideal for travel or minimalist lifestyles, these bars last up to 60 washes and come in compostable packaging. They're pH balanced and safe for color-treated hair, too. Make your daily shower a moment of eco-conscious self-care. Cleaner hair, cleaner planet.",
+    "imgPath": "/products/shampoo-bars.jpg",
+    "sku": "PC-003",
+    "categoryId": 2
+  },
+  {
+    "id": 10,
+    "name": "Reusable Facial Rounds (Cotton Pads)",
+    "price": 549.0,
+    "shortDescription": "Ditch disposables with Reusable Facial Rounds — ultra-soft cotton pads perfect for makeup removal or toner. Machine washable and gentle on skin and the environment.",
+    "longDescription": "Transform your skincare routine with our Reusable Facial Rounds — an eco-friendly replacement for disposable cotton pads. Made from ultra-soft organic cotton, these washable rounds are perfect for applying toner, removing makeup, or cleansing sensitive skin. Each set comes with a cotton wash bag for easy laundering and reuse. Durable and gentle, they help reduce landfill waste and save money over time. With proper care, they last through hundreds of uses. Perfect for zero-waste beauty routines, travel kits, or everyday cleansing. Make the sustainable swap that’s kind to your skin — and the planet.",
+    "imgPath": "/products/reusable-facial-rounds.jpg",
+    "sku": "PC-004",
+    "categoryId": 2
+  },
+  {
+    "id": 11,
+    "name": "Biodegradable Floss",
+    "price": 299.0,
+    "shortDescription": "Floss guilt-free with Biodegradable Floss — made from corn fiber and candelilla wax in a refillable glass container. Clean teeth, clean conscience.",
+    "longDescription": "Make oral hygiene waste-free with our Biodegradable Floss — a plastic-free alternative made from corn fiber and coated with vegan candelilla wax. Housed in a sleek, refillable glass container, it's perfect for zero-waste bathrooms. The strong yet gentle floss glides easily between teeth, removing plaque without harming gums or the planet. Refills come in compostable packaging, ensuring every part of your floss routine is sustainable. Unlike conventional nylon floss, this one won’t sit in a landfill for centuries. Take care of your teeth — and the environment — one floss at a time.",
+    "imgPath": "/products/biodegradable-floss.jpg",
+    "sku": "PC-005",
+    "categoryId": 2
+  },
+  {
+    "id": 12,
+    "name": "Organic Deodorant",
+    "price": 675.0,
+    "shortDescription": "Stay fresh the natural way with Organic Deodorant — aluminum-free and packaged in compostable paper tubes. Gentle on your skin and tough on odor.",
+    "longDescription": "Say goodbye to synthetic deodorants and hello to a cleaner choice. Our Organic Deodorant is crafted from natural ingredients like coconut oil, baking soda, arrowroot powder, and essential oils — providing long-lasting freshness without aluminum, parabens, or artificial fragrances. Packaged in fully compostable paper tubes, it's the perfect solution for zero-waste living. Smooth, non-greasy, and skin-friendly, it glides on easily and absorbs moisture while neutralizing odor. Ideal for sensitive skin and eco-conscious routines. Whether it’s work, play, or travel, this deodorant keeps you confidently fresh — the natural way.",
+    "imgPath": "/products/organic-deodorant.jpg",
+    "sku": "PC-006",
+    "categoryId": 2
+  },
+  {
+    "id": 13,
+    "name": "Organic Cotton T-Shirts",
+    "price": 1299.0,
+    "shortDescription": "Stay comfortable and conscious in our Organic Cotton T-Shirts — breathable, soft, and ethically made. A wardrobe essential crafted from GOTS-certified cotton that’s kind to your skin and the planet.",
+    "longDescription": "Elevate your everyday wear with our Organic Cotton T-Shirts — made from 100% GOTS-certified cotton grown without harmful pesticides or GMOs. These tees are breathable, lightweight, and pre-shrunk for a perfect fit, wash after wash. Ethically produced in fair-wage factories, they offer a guilt-free staple for minimalist and sustainable wardrobes. Available in timeless colors and classic cuts, they pair well with jeans, skirts, or loungewear. The fabric is soft, durable, and biodegradable, ensuring zero microplastic pollution. Whether layered or worn solo, these t-shirts make sustainability stylish and effortless. Wear your values proudly — one tee at a time.",
+    "imgPath": "/products/organic-tshirts.jpg",
+    "sku": "CL-001",
+    "categoryId": 3
+  },
+  {
+    "id": 14,
+    "name": "Recycled Polyester Activewear",
+    "price": 1799.0,
+    "shortDescription": "Move mindfully in our Recycled Polyester Activewear — lightweight, breathable, and made from post-consumer plastic bottles. Designed for performance, comfort, and conscious living.",
+    "longDescription": "Break a sweat without breaking the planet with our Recycled Polyester Activewear. Each piece is made from reclaimed plastic bottles, spun into soft, durable fabric that’s moisture-wicking and flexible for any activity. Ideal for yoga, gym sessions, or daily wear, it combines performance technology with eco-conscious design. The activewear is stitched with flatlock seams to reduce chafing and features supportive, flattering cuts that suit all body types. It’s machine washable, fade-resistant, and built to last through countless workouts. Reduce your carbon footprint while you move. Train in gear that moves with you — and the planet.",
+    "imgPath": "/products/recycled-activewear.jpg",
+    "sku": "CL-002",
+    "categoryId": 3
+  },
+  {
+    "id": 15,
+    "name": "Bamboo Underwear",
+    "price": 849.0,
+    "shortDescription": "Feel the difference with Bamboo Underwear — ultra-soft, breathable, and naturally antibacterial. A gentle, sustainable alternative to synthetic fabrics for everyday comfort.",
+    "longDescription": "Experience next-level comfort with our Bamboo Underwear — made from bamboo viscose, a naturally breathable and moisture-wicking fabric that feels silky smooth against your skin. Hypoallergenic and thermoregulating, it’s ideal for sensitive skin and all-day wear. The fabric is naturally antibacterial, reducing odor and irritation without chemical additives. With a seamless, no-roll waistband and stretch fit, these undergarments offer support without sacrificing softness. Sustainably sourced and biodegradable, bamboo requires less water and no pesticides to grow. Make your most-used clothing item your most sustainable. Comfort meets conscience — where it matters most.",
+    "imgPath": "/products/bamboo-underwear.jpg",
+    "sku": "CL-003",
+    "categoryId": 3
+  },
+  {
+    "id": 16,
+    "name": "Hemp Socks",
+    "price": 499.0,
+    "shortDescription": "Step into sustainability with Hemp Socks — durable, breathable, and naturally anti-bacterial. A perfect blend of comfort and eco-conscious materials for daily wear.",
+    "longDescription": "Revolutionize your sock drawer with our Hemp Socks — made from a blend of hemp, organic cotton, and a touch of elastane for stretch. These socks are naturally antimicrobial and moisture-wicking, keeping your feet dry and odor-free all day. Hemp grows quickly without pesticides or excessive water, making it one of the most sustainable fibers on earth. The reinforced heel and toe ensure long-lasting durability, while the soft ribbed cuff offers a snug, stay-put fit. Whether you're at work, home, or on a hike, these socks keep your feet and the planet happy. Walk lightly, tread wisely.",
+    "imgPath": "/products/hemp-socks.jpg",
+    "sku": "CL-004",
+    "categoryId": 3
+  },
+  {
+    "id": 17,
+    "name": "Natural Dye Linen Scarves",
+    "price": 1149.0,
+    "shortDescription": "Wrap yourself in eco-elegance with our Natural Dye Linen Scarves — hand-dyed with plant-based pigments and made from breathable, biodegradable linen.",
+    "longDescription": "Add timeless charm to your outfit with our Natural Dye Linen Scarves — lightweight and breathable accessories hand-dyed using botanical pigments like turmeric, indigo, and madder root. Made from 100% linen, these scarves are soft, moisture-wicking, and perfect for year-round wear. Each piece is naturally unique due to its artisanal dye process and is completely biodegradable at the end of its life. Whether draped, knotted, or wrapped, it complements both casual and formal looks with a touch of sustainability. No synthetic dyes, no waste — just honest materials and traditional craft. Beauty with purpose.",
+    "imgPath": "/products/linen-scarves.jpg",
+    "sku": "CL-005",
+    "categoryId": 3
+  },
+  {
+    "id": 18,
+    "name": "Eco-Friendly Sneakers",
+    "price": 2899.0,
+    "shortDescription": "Step forward in Eco-Friendly Sneakers — stylish, lightweight shoes made from recycled plastic bottles and rubber. Designed for comfort, built for impact.",
+    "longDescription": "Make your every step count with our Eco-Friendly Sneakers — crafted from recycled PET bottles and natural rubber soles, these shoes blend performance with sustainability. Breathable knit uppers provide a comfortable, sock-like fit, while the cushioned insoles support all-day wear. The outsoles are flexible, grippy, and made to last, reducing the need for frequent replacements. Stylish enough for the city and durable enough for the trail, they’re the perfect everyday companion for conscious walkers. Shipped in recycled packaging and entirely animal-free, these sneakers redefine what eco-footwear should be. Wear change — from the ground up.",
+    "imgPath": "/products/eco-sneakers.jpg",
+    "sku": "CL-006",
+    "categoryId": 3
+  },
+  {
+    "id": 19,
+    "name": "Wooden Teething Toys",
+    "price": 699.0,
+    "shortDescription": "Soothe your little one naturally with our Wooden Teething Toys — made from smooth, untreated wood and free from harmful chemicals. Safe, durable, and baby-approved.",
+    "longDescription": "Support your baby’s teething journey with our Wooden Teething Toys — crafted from sustainably sourced, chemical-free hardwood. These toys are sanded to a silky smooth finish, making them gentle on sensitive gums while promoting natural chewing relief. Free from plastics, paints, and toxins, they’re a safe alternative to conventional teething rings. Their simple design encourages sensory exploration and motor skill development. Easy to clean and durable enough to last through many teething phases, they’re a favorite among eco-conscious parents. Thoughtfully made for tiny hands — and a cleaner world.",
+    "imgPath": "/products/wooden-teething-toys.jpg",
+    "sku": "KD-001",
+    "categoryId": 4
+  },
+  {
+    "id": 20,
+    "name": "Cloth Diapers",
+    "price": 1199.0,
+    "shortDescription": "Make diapering waste-free with our reusable Cloth Diapers — adjustable, breathable, and machine-washable. A cost-effective, eco-friendly solution for modern parents.",
+    "longDescription": "Say goodbye to disposable waste with our Cloth Diapers — soft, absorbent, and adjustable to fit growing babies. Made from organic cotton and a waterproof outer layer, they keep your child dry while reducing your landfill footprint. Each diaper features easy-snap closures, gentle leg elastics, and a pocket design for insert customization. Machine-washable and reusable hundreds of times, they save money and resources in the long run. Available in playful prints and colors that make diaper changes a little more fun. Sustainable parenting starts here — gentle for baby, smart for the planet.",
+    "imgPath": "/products/cloth-diapers.jpg",
+    "sku": "KD-002",
+    "categoryId": 4
+  },
+  {
+    "id": 21,
+    "name": "BPA-Free Reusable Snack Bags",
+    "price": 649.0,
+    "shortDescription": "Pack snacks sustainably with our BPA-Free Reusable Snack Bags — leakproof, washable, and fun for kids. A mess-free, zero-waste alternative to plastic zip bags.",
+    "longDescription": "Make lunchtime greener with our BPA-Free Reusable Snack Bags — ideal for storing fruits, sandwiches, or dry snacks. Made from food-grade, waterproof PEVA material, they’re leak-resistant and easy to open for little hands. The zipper seal keeps food fresh while preventing spills in backpacks or lunchboxes. These bags are reusable hundreds of times and are safe for the dishwasher (top rack). Available in colorful, kid-friendly patterns that make meals more fun and eco-friendly. Say goodbye to single-use plastic and hello to a cleaner, reusable future — one bite at a time.",
+    "imgPath": "/products/reusable-snack-bags.jpg",
+    "sku": "KD-003",
+    "categoryId": 4
+  },
+  {
+    "id": 22,
+    "name": "Organic Cotton Baby Onesies",
+    "price": 799.0,
+    "shortDescription": "Dress your baby in softness with our Organic Cotton Baby Onesies — breathable, hypoallergenic, and gentle on sensitive skin. Made with love and sustainable fibers.",
+    "longDescription": "Give your baby the best with our Organic Cotton Baby Onesies — crafted from 100% GOTS-certified cotton for unmatched softness and safety. Free from dyes, synthetic fabrics, and harsh chemicals, these onesies are ideal for delicate, newborn skin. The envelope neckline and snap closures make dressing and diaper changes a breeze. Durable enough for everyday wear and washing, they hold their shape and comfort over time. Each piece is ethically made and fully biodegradable at the end of its life. Style, comfort, and sustainability in one sweet bundle — for babies and the earth.",
+    "imgPath": "/products/organic-baby-onesies.jpg",
+    "sku": "KD-004",
+    "categoryId": 4
+  },
+  {
+    "id": 23,
+    "name": "Plant-Based Crayons",
+    "price": 349.0,
+    "shortDescription": "Color with confidence using Plant-Based Crayons — made from natural waxes and pigments. Safe for kids, non-toxic, and biodegradable for worry-free creativity.",
+    "longDescription": "Unleash your child’s creativity with our Plant-Based Crayons — eco-friendly art tools made from soy and beeswax instead of petroleum-based paraffin. These crayons are non-toxic, compostable, and shaped for little hands to grip easily. They glide smoothly on paper and come in vibrant, naturally derived colors that inspire imagination without compromising safety. Packaged in recycled, plastic-free boxes, they’re perfect for schools, home play, or on-the-go creativity. No flaking, no harmful fumes — just safe, colorful fun. Encourage artistic expression that’s as kind to the earth as it is to your kids.",
+    "imgPath": "/products/plant-based-crayons.jpg",
+    "sku": "KD-005",
+    "categoryId": 4
+  },
+  {
+    "id": 24,
+    "name": "Recycled Paper Activity Books",
+    "price": 399.0,
+    "shortDescription": "Engage young minds with Recycled Paper Activity Books — fun, educational pages printed on 100% post-consumer recycled paper. Learning meets sustainability.",
+    "longDescription": "Fuel eco-conscious learning with our Recycled Paper Activity Books — filled with puzzles, coloring pages, and educational games printed on 100% post-consumer recycled paper using non-toxic inks. Each book is designed to teach kids about nature, sustainability, and mindfulness through interactive play. The pages are thick enough for markers or crayons and bound in plastic-free covers that are recyclable and compostable. Whether used at home or in the classroom, they’re a great way to encourage curiosity while modeling care for the planet. Learning is better when it’s green.",
+    "imgPath": "/products/recycled-activity-books.jpg",
+    "sku": "KD-006",
+    "categoryId": 4
+  },
+  {
+    "id": 25,
+    "name": "Compost Bin for Kitchen Waste",
+    "price": 1499.0,
+    "shortDescription": "Turn scraps into soil with our Kitchen Compost Bin — odor-blocking, compact, and countertop-friendly. A simple, stylish way to start composting at home.",
+    "longDescription": "Make composting a daily habit with our Kitchen Compost Bin — designed for modern homes with sustainability in mind. Made from durable, BPA-free recycled plastic and fitted with an activated charcoal filter, it traps odors while collecting food waste like peels, grounds, and scraps. The removable inner bucket makes emptying and cleaning easy, while the lid ensures no pests or smells. Compact enough for countertops but large enough for daily use, it blends into any kitchen style. Start your zero-waste journey right where it begins — at home, with less mess and more impact.",
+    "imgPath": "/products/kitchen-compost-bin.jpg",
+    "sku": "GR-001",
+    "categoryId": 5
+  },
+  {
+    "id": 26,
+    "name": "Seed Starter Kits",
+    "price": 799.0,
+    "shortDescription": "Grow your own with our Organic Seed Starter Kits — complete with compostable pots, organic soil, and heirloom seeds. Perfect for balconies, windowsills, or home gardens.",
+    "longDescription": "Bring your garden to life with our Organic Seed Starter Kits — the perfect introduction to growing your own herbs, vegetables, or flowers. Each kit includes biodegradable seed pots, nutrient-rich organic soil pellets, and a curated selection of heirloom, non-GMO seeds. Whether you're a beginner or seasoned gardener, these kits make it easy to grow fresh produce right from your kitchen window or balcony. The included guide walks you through every step, from planting to harvesting. No plastics, no pesticides — just pure, sustainable gardening joy. Cultivate something good, one seed at a time.",
+    "imgPath": "/products/organic-seed-kits.jpg",
+    "sku": "GR-002",
+    "categoryId": 5
+  },
+  {
+    "id": 27,
+    "name": "Biodegradable Planters",
+    "price": 649.0,
+    "shortDescription": "Plant with purpose using our Biodegradable Planters — crafted from coconut coir and rice husk. Lightweight, breathable, and perfect for seedlings and herbs.",
+    "longDescription": "Say goodbye to plastic pots with our Biodegradable Planters — eco-friendly containers made from agricultural waste like coconut coir, wheat bran, and rice husk. These breathable, natural planters improve root aeration and moisture retention, helping plants grow stronger from the start. Ideal for seedlings, herbs, and small indoor plants, they can be planted directly into the soil without removing the pot. Over time, they naturally break down and enrich the earth. Lightweight and chemical-free, they’re a must-have for any eco-conscious gardener. Grow green, inside and out.",
+    "imgPath": "/products/biodegradable-planters.jpg",
+    "sku": "GR-003",
+    "categoryId": 5
+  },
+  {
+    "id": 28,
+    "name": "Natural Coir Potting Mix",
+    "price": 399.0,
+    "shortDescription": "Feed your plants the sustainable way with our Natural Coir Potting Mix — made from coconut husk fibers. Rich in nutrients, lightweight, and soil-enriching.",
+    "longDescription": "Boost your garden’s health with our Natural Coir Potting Mix — a sustainable growing medium made from coconut husk fibers. This eco-friendly alternative to peat moss improves water retention, aeration, and root development, making it ideal for pots, hanging baskets, or raised beds. It’s pH neutral, free from synthetic chemicals, and naturally resistant to pests and mold. Use it alone or mix with soil to enhance structure and fertility. Packaged in compostable bags and sourced from renewable coconut waste, it's gardening done right — for you and the planet. Plant smarter, grow cleaner.",
+    "imgPath": "/products/coir-potting-mix.jpg",
+    "sku": "GR-004",
+    "categoryId": 5
+  },
+  {
+    "id": 29,
+    "name": "Solar-Powered Garden Lights",
+    "price": 1999.0,
+    "shortDescription": "Light up your outdoors sustainably with Solar Garden Lights — energy-saving, waterproof, and wire-free. Charge by day, shine by night — no carbon, no cords.",
+    "longDescription": "Transform your garden into a glowing retreat with our Solar-Powered Garden Lights. Powered entirely by sunlight, these outdoor lights charge during the day and automatically illuminate at dusk — no wiring or electricity needed. Waterproof and weather-resistant, they're perfect for pathways, patios, or plant beds. Each unit features energy-efficient LEDs, a long-lasting battery, and a durable, rust-proof body. Easy to install and maintenance-free, they help you save on power bills while reducing your carbon footprint. Illuminate your green space the smart way — clean energy, beautiful nights.",
+    "imgPath": "/products/solar-garden-lights.jpg",
+    "sku": "GR-005",
+    "categoryId": 5
+  },
+  {
+    "id": 30,
+    "name": "Rainwater Harvesting Barrel",
+    "price": 3299.0,
+    "shortDescription": "Conserve water with our Rainwater Harvesting Barrel — collect and reuse rain for your garden. Durable, easy-to-use, and great for sustainable living.",
+    "longDescription": "Reduce your water bill and environmental impact with our Rainwater Harvesting Barrel — a smart solution for capturing and storing rainwater from rooftops. Made from recycled plastic, this UV-resistant barrel features a secure lid, spigot, and mesh screen to keep debris and mosquitoes out. It holds up to 200 liters of water and is perfect for watering gardens, washing outdoor tools, or emergency use. Easy to install and built to last, it’s a great step toward sustainable gardening and water conservation. Reuse nature’s gift — save water, grow more, waste less.",
+    "imgPath": "/products/rainwater-barrel.jpg",
+    "sku": "GR-006",
+    "categoryId": 5
+  }
+]

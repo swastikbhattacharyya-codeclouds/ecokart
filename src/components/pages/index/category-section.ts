@@ -1,3 +1,5 @@
+import { createIcons, icons } from "lucide";
+import { CategoryService } from "../../../category.ts";
 import "./category-card.ts";
 
 class CategorySection extends HTMLElement {
@@ -9,36 +11,19 @@ class CategorySection extends HTMLElement {
 
   constructor() {
     super();
-    this.categories = [
-      {
-        category: "Home Goods",
-        imgSrc: "categories/home-goods.png",
-        icon: "brush-cleaning",
-      },
-      {
-        category: "Personal Care",
-        imgSrc: "categories/personal-care.png",
-        icon: "spray-can",
-      },
-      {
-        category: "Clothing",
-        imgSrc: "categories/clothing.png",
-        icon: "shirt",
-      },
-      {
-        category: "Kids",
-        imgSrc: "categories/kids.png",
-        icon: "baby",
-      },
-      {
-        category: "Garden",
-        imgSrc: "categories/garden.png",
-        icon: "flower-2",
-      },
-    ];
+    this.categories = [];
   }
 
-  connectedCallback() {
+  async connectedCallback() {
+    const fetchedCategories = await CategoryService.getCategories();
+    fetchedCategories.forEach((fetchedCategory) => {
+      this.categories.push({
+        category: fetchedCategory.name,
+        imgSrc: fetchedCategory.imgPath,
+        icon: fetchedCategory.icon,
+      });
+    });
+
     this.innerHTML = `
       <section
         class="flex flex-col gap-y-4 px-8 pt-16 pb-4 sm:px-[5dvw] lg:px-[15dvw]"
@@ -66,6 +51,8 @@ class CategorySection extends HTMLElement {
     });
 
     this.setupDrag(categoryCarousel);
+
+    createIcons({ icons });
   }
 
   setupDrag(categoryCarousel: HTMLDivElement) {

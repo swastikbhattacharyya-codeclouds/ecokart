@@ -1,5 +1,13 @@
+import { createIcons, icons } from "lucide";
+import ProductService from "../../../product";
+
 class ProductSection extends HTMLElement {
-  connectedCallback() {
+  async connectedCallback() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const idParam = urlParams.get("id") as string;
+    const productId = parseInt(idParam, 10);
+    const product = await ProductService.getProductById(productId);
+
     this.innerHTML = `
       <section
         class="flex flex-col gap-4 px-8 md:grid md:grid-cols-2 md:gap-12 md:px-[5dvw] lg:px-[15dvw]"
@@ -13,7 +21,7 @@ class ProductSection extends HTMLElement {
         <div class="relative max-md:h-[400px] max-md:w-full">
           <img
             class="absolute h-full w-full rounded-md object-cover"
-            src="products/reusable-beeswax-food-wraps.jpg"
+            src="${product?.imgPath}"
           />
         </div>
         <div class="flex flex-col gap-y-4">
@@ -24,15 +32,11 @@ class ProductSection extends HTMLElement {
             ← Go Back
           </a>
           <h1 class="font-[Montserrat] text-3xl font-bold md:text-4xl">
-            Reusable Beeswax Food Wraps
+            ${product?.name}
           </h1>
           <p class="font-[Karla] text-3xl font-bold">&#8377; 150</p>
           <p class="font-[Karla] text-xl">
-            Wrap your food the eco-friendly way with our Reusable Beeswax Food
-            Wraps — made from organic cotton and natural beeswax. These
-            breathable, antibacterial wraps keep your food fresh longer and are
-            reusable for up to a year, helping you reduce plastic waste without
-            sacrificing convenience.
+            ${product?.shortDescription}
           </p>
           <div class="flex items-center-safe gap-x-4">
             <div class="flex w-max items-stretch py-1 font-[Karla]">
@@ -71,12 +75,14 @@ class ProductSection extends HTMLElement {
             </div>
           </div>
           <div class="font-[Karla]">
-            <p><b>SKU:</b> MRV-4040</p>
-            <p><b>Categories:</b> Home Goods</p>
+            <p><b>SKU:</b> ${product?.sku}</p>
+            <p><b>Categories:</b> ${product?.categoryName}</p>
           </div>
         </div>
       </section>
     `;
+
+    createIcons({ icons });
   }
 }
 

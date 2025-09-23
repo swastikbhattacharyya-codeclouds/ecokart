@@ -1,5 +1,6 @@
 class ProductCard extends HTMLElement {
   connectedCallback() {
+    const id = this.getAttribute("data-id");
     const imgSrc = this.getAttribute("data-img");
     const name = this.getAttribute("data-name");
     const category = this.getAttribute("data-category");
@@ -7,13 +8,13 @@ class ProductCard extends HTMLElement {
 
     this.innerHTML = `
       <div class="flex flex-col items-center-safe gap-y-2">
-        <div class="max-h-[300px] max-w-[300px] overflow-hidden rounded-md">
+        <a href="/product?id=${id}" class="max-h-[300px] max-w-[300px] overflow-hidden rounded-md">
           <img class="cursor-pointer" src="${imgSrc}" />
-        </div>
+        </a>
         <div class="flex flex-col items-center-safe">
-          <h3 class="text-center font-[Montserrat] font-bold">
+          <a href="/product?id=${id}" class="text-center font-[Montserrat] font-bold">
             ${name}
-          </h3>
+          </a>
           <p class="text-center font-[Karla] text-sm text-gray-500">
             ${category}
           </p>

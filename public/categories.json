@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Home Goods",
+    "icon": "brush-cleaning",
+    "imgPath": "/categories/home-goods.png"
+  },
+  {
+    "id": 2,
+    "name": "Personal Care",
+    "icon": "spray-can",
+    "imgPath": "/categories/personal-care.png"
+  },
+  {
+    "id": 3,
+    "name": "Clothing",
+    "icon": "shirt",
+    "imgPath": "/categories/clothing.png"
+  },
+  {
+    "id": 4,
+    "name": "Kids",
+    "icon": "baby",
+    "imgPath": "/categories/kids.png"
+  },
+  {
+    "id": 5,
+    "name": "Garden",
+    "icon": "flower-2",
+    "imgPath": "/categories/garden.png"
+  }
+]

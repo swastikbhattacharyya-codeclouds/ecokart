@@ -1,3 +1,4 @@
+import ProductService from "../../../product.ts";
 import { hideGrid, showGrid } from "../../../utils/anim.ts";
 import "./product-card.ts";
 
@@ -11,29 +12,37 @@ class MoreProductsGrid extends HTMLElement {
 
   constructor() {
     super();
-    this.products = [
-      {
-        name: "Bamboo Toothbrushes",
-        category: "Personal Care",
-        imgSrc: "products/bamboo-toothbrushes.jpg",
-        price: 150,
-      },
-      {
-        name: "Compostable Trash Bags",
-        category: "Home Goods",
-        imgSrc: "products/compostable-trash-bags.jpg",
-        price: 50,
-      },
-      {
-        name: "Refillable Cleaning Products",
-        category: "Home Goods",
-        imgSrc: "products/refillable-cleaning-products.jpg",
-        price: 75,
-      },
-    ];
+    this.products = [];
   }
 
-  connectedCallback() {
+  private getRandomUniqueIds(
+    count: number,
+    min: number,
+    max: number,
+  ): number[] {
+    const set = new Set<number>();
+    while (set.size < count) {
+      const rand = Math.floor(Math.random() * (max - min + 1)) + min;
+      set.add(rand);
+    }
+    return Array.from(set);
+  }
+
+  async connectedCallback() {
+    const randomIds = this.getRandomUniqueIds(3, 1, 30);
+
+    for (const id of randomIds) {
+      const product = await ProductService.getProductById(id);
+      if (product) {
+        this.products.push({
+          name: product.name,
+          category: product.categoryName ?? "",
+          imgSrc: product.imgPath,
+          price: product.price,
+        });
+      }
+    }
+
     this.innerHTML = `
       <div
         id="best-sellers-grid"
