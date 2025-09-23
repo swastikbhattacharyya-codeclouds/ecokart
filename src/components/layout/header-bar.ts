@@ -1,3 +1,5 @@
+import { getCartTotalPrice } from "../../cart-service.ts";
+
 class HeaderBar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -48,7 +50,7 @@ class HeaderBar extends HTMLElement {
           <i class="hidden size-4 lg:block" data-lucide="heart"></i>
           <i class="hidden size-4 lg:block" data-lucide="shuffle"></i>
           <i class="lg:size-4" data-lucide="shopping-cart"></i>
-          <div class="hidden font-bold lg:block">&#8377;<span>0.00</span></div>
+          <div class="hidden font-bold lg:block">&#8377;<span id="cart-price">0.00</span></div>
         </div>
       </div>
     `;
@@ -61,6 +63,21 @@ class HeaderBar extends HTMLElement {
         new CustomEvent("hamburger-nav-open", { bubbles: true }),
       );
     });
+
+    this.setupCartPrice();
+  }
+
+  private setupCartPrice() {
+    const cartPrice = document.querySelector("#cart-price");
+    if (!cartPrice) return;
+
+    const updatePrice = async () => {
+      const price = await getCartTotalPrice();
+      cartPrice.textContent = price.toString();
+    };
+
+    updatePrice();
+    document.addEventListener("cart-updated", updatePrice);
   }
 }
 

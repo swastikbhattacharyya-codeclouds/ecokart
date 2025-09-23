@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
+    "dexie": "^4.2.0",
     "lucide": "^0.544.0",
     "tailwindcss": "^4.1.13"
   }

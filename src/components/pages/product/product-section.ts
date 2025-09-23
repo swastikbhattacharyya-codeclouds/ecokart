@@ -1,5 +1,8 @@
 import { createIcons, icons } from "lucide";
 import ProductService from "../../../product";
+import { db } from "../../../db";
+import { addToCart, removeFromCart } from "../../../cart-service.ts";
+import { goBackWithRefresh } from "../../../utils/go-back-with-refresh.ts";
 
 class ProductSection extends HTMLElement {
   async connectedCallback() {
@@ -8,16 +11,17 @@ class ProductSection extends HTMLElement {
     const productId = parseInt(idParam, 10);
     const product = await ProductService.getProductById(productId);
 
+    const productInCart = await db.cart.get(product!.id);
+
     this.innerHTML = `
       <section
         class="flex flex-col gap-4 px-8 md:grid md:grid-cols-2 md:gap-12 md:px-[5dvw] lg:px-[15dvw]"
       >
-        <a
-          href="javascript:history.back()"
-          class="inline-block w-max rounded-full border border-green-500 bg-green-100 px-4 py-2 font-[Karla] text-sm font-medium text-green-700 transition md:hidden"
+        <button
+          class="back-button inline-block w-max rounded-full border border-green-500 bg-green-100 px-4 py-2 font-[Karla] text-sm font-medium text-green-700 cursor-pointer transition md:hidden"
         >
           ← Go Back
-        </a>
+        </button>
         <div class="relative max-md:h-[400px] max-md:w-full">
           <img
             class="absolute h-full w-full rounded-md object-cover"
@@ -25,12 +29,11 @@ class ProductSection extends HTMLElement {
           />
         </div>
         <div class="flex flex-col gap-y-4">
-          <a
-            href="javascript:history.back()"
-            class="hidden w-max rounded-full border border-green-500 bg-green-100 px-4 py-2 font-[Karla] text-sm font-medium text-green-700 transition md:inline-block"
+          <button
+            class="back-button hidden w-max rounded-full border border-green-500 bg-green-100 px-4 py-2 font-[Karla] text-sm font-medium text-green-700 cursor-pointer transition md:inline-block"
           >
             ← Go Back
-          </a>
+          </button>
           <h1 class="font-[Montserrat] text-3xl font-bold md:text-4xl">
             ${product?.name}
           </h1>
@@ -41,23 +44,28 @@ class ProductSection extends HTMLElement {
           <div class="flex items-center-safe gap-x-4">
             <div class="flex w-max items-stretch py-1 font-[Karla]">
               <button
-                class="flex h-8 w-8 items-center-safe justify-center-safe rounded-l-full bg-gray-300 font-bold"
+                id="qty-decrease-btn"
+                class="flex h-8 w-8 items-center-safe justify-center-safe rounded-l-full bg-gray-300 font-bold cursor-pointer"
               >
                 –
               </button>
               <div
+                id="qty-value"
                 class="flex w-10 items-center-safe justify-center-safe border border-green-200 text-center font-semibold text-green-900 select-none"
               >
                 1
               </div>
               <button
-                class="flex h-8 w-8 items-center-safe justify-center-safe rounded-r-full bg-gray-300 font-bold"
+                id="qty-increase-btn"
+                class="flex h-8 w-8 items-center-safe justify-center-safe rounded-r-full bg-gray-300 font-bold cursor-pointer"
               >
                 +
               </button>
             </div>
             <button
-              class="max-w-[300px] flex-1 rounded-full bg-[rgb(131,183,53)] p-3 font-[Karla] text-white"
+              id="add-to-cart-btn"
+              class="max-w-[300px] flex-1 rounded-full bg-[rgb(131,183,53)] p-3 font-[Karla] text-white cursor-pointer hover:bg-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              ${productInCart && "disabled"}
             >
               ADD TO CART
             </button>
@@ -83,6 +91,79 @@ class ProductSection extends HTMLElement {
     `;
 
     createIcons({ icons });
+
+    const qtyValue = document.querySelector("#qty-value");
+    if (!qtyValue) return;
+
+    if (productInCart)
+      qtyValue.textContent = (await db.cart.get(product!.id))!.qty.toString();
+    else qtyValue.textContent = "0";
+
+    document.querySelectorAll(".back-button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        goBackWithRefresh();
+        return false;
+      });
+    });
+
+    this.setupQty(product!.id);
+    this.setupCartUpdate(product!.id);
+  }
+
+  private setupQty(productId: number) {
+    const qtyValue = this.querySelector("#qty-value");
+    const addToCartBtn = document.querySelector("#add-to-cart-btn");
+    const qtyDecreaseBtn = document.querySelector("#qty-decrease-btn");
+    const qtyIncreaseBtn = document.querySelector("#qty-increase-btn");
+    if (!qtyValue || !addToCartBtn || !qtyIncreaseBtn || !qtyDecreaseBtn)
+      return;
+
+    addToCartBtn.addEventListener("click", async () => {
+      let qty = parseInt(qtyValue!.textContent ?? "1");
+      if (qty == 0) qty = 1;
+      await addToCart(productId, qty);
+      this.dispatchEvent(new CustomEvent("cart-updated", { bubbles: true }));
+    });
+
+    qtyIncreaseBtn.addEventListener("click", async () => {
+      const item = await db.cart.get(productId);
+      if (!item) {
+        const qty = parseInt(qtyValue!.textContent ?? "1");
+        qtyValue.textContent = `${qty + 1}`;
+        return;
+      }
+      await addToCart(productId, 1);
+      this.dispatchEvent(new CustomEvent("cart-updated", { bubbles: true }));
+    });
+
+    qtyDecreaseBtn.addEventListener("click", async () => {
+      const item = await db.cart.get(productId);
+      if (!item) return;
+      await removeFromCart(productId, 1);
+      this.dispatchEvent(new CustomEvent("cart-updated", { bubbles: true }));
+    });
+  }
+
+  private setupCartUpdate(productId: number) {
+    const addToCartBtn = this.querySelector("#add-to-cart-btn");
+    const qtyValue = this.querySelector("#qty-value");
+
+    if (!addToCartBtn || !qtyValue) return;
+
+    const updateUI = async () => {
+      const item = await db.cart.get(productId);
+      if (item) {
+        addToCartBtn.setAttribute("disabled", "true");
+        qtyValue.textContent = item.qty.toString();
+      } else {
+        addToCartBtn.removeAttribute("disabled");
+        qtyValue.textContent = "0";
+      }
+    };
+
+    updateUI();
+
+    this.addEventListener("cart-updated", updateUI);
   }
 }
 
