@@ -6,20 +6,13 @@ class HamburgerNav extends HTMLElement {
         class="z-50 fixed overflow-y-auto top-0 left-0 hidden h-dvh w-[80dvw] max-w-[300px] -translate-x-full flex-col bg-white shadow-xl transition-all duration-200 lg:hidden"
         data-state="closed"
       >
-        <div class="flex items-center-safe p-4">
-          <input
-            class="flex-1 border-none font-[Karla] text-sm outline-none placeholder:text-gray-500"
-            placeholder="Search for products"
-          />
-          <i class="size-6 text-gray-500" data-lucide="search"></i>
-        </div>
         <nav class="flex flex-col font-[Karla]">
           <a
             href="/index.html"
             class="border-t border-b border-t-gray-300 border-b-gray-300 px-4 py-2"
             >Home</a
           >
-          <a class="border-b border-b-gray-300 px-4 py-2">Shop</a>
+          <a href="/shop.html" class="border-b border-b-gray-300 px-4 py-2">Shop</a>
           <a class="border-b border-b-gray-300 px-4 py-2">Blog</a>
           <a class="border-b border-b-gray-300 px-4 py-2">Contact Us</a>
           <a

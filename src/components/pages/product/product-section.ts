@@ -138,7 +138,11 @@ class ProductSection extends HTMLElement {
 
     qtyDecreaseBtn.addEventListener("click", async () => {
       const item = await db.cart.get(productId);
-      if (!item) return;
+      if (!item) {
+        const qty = parseInt(qtyValue!.textContent ?? "1");
+        qtyValue.textContent = `${qty - 1}`;
+        return;
+      }
       await removeFromCart(productId, 1);
       this.dispatchEvent(new CustomEvent("cart-updated", { bubbles: true }));
     });

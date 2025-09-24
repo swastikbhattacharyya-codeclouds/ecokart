@@ -4,6 +4,7 @@ import "./category-card.ts";
 
 class CategorySection extends HTMLElement {
   private readonly categories: {
+    id: number;
     category: string;
     imgSrc: string;
     icon: string;
@@ -18,6 +19,7 @@ class CategorySection extends HTMLElement {
     const fetchedCategories = await CategoryService.getCategories();
     fetchedCategories.forEach((fetchedCategory) => {
       this.categories.push({
+        id: fetchedCategory.id,
         category: fetchedCategory.name,
         imgSrc: fetchedCategory.imgPath,
         icon: fetchedCategory.icon,
@@ -46,7 +48,7 @@ class CategorySection extends HTMLElement {
     this.categories.forEach(function (category) {
       categoryCarousel.insertAdjacentHTML(
         "beforeend",
-        `<category-card data-category="${category.category}" data-img="${category.imgSrc}" data-icon="${category.icon}"></category-card>`,
+        `<category-card data-id="${category.id}" data-category="${category.category}" data-img="${category.imgSrc}" data-icon="${category.icon}"></category-card>`,
       );
     });
 

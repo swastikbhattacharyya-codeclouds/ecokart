@@ -1,5 +1,6 @@
 class CategoryCard extends HTMLElement {
   connectedCallback() {
+    const id = this.getAttribute("data-id");
     const imgSrc = this.getAttribute("data-img");
     const icon = this.getAttribute("data-icon");
     const category = this.getAttribute("data-category");
@@ -15,13 +16,22 @@ class CategoryCard extends HTMLElement {
           height="300"
         />
         <button
-          class="z-30 flex w-[200px] items-center-safe justify-center-safe gap-x-2 rounded-full bg-white py-3 font-[Karla] shadow-md"
+          id="category-btn"
+          class="z-30 flex cursor-pointer w-[200px] items-center-safe justify-center-safe gap-x-2 rounded-full bg-white py-3 font-[Karla] shadow-md"
         >
           <i class="size-6" data-lucide="${icon}"></i>
           <p>${category}</p>
         </button>
       </div>
     `;
+
+    const button = this.querySelector<HTMLButtonElement>("#category-btn");
+    if (button && id) {
+      button.addEventListener("mousedown", () => {
+        const params = new URLSearchParams({ category: id });
+        window.location.href = `/shop.html?${params.toString()}`;
+      });
+    }
   }
 }
 

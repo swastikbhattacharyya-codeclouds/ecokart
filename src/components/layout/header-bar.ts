@@ -1,4 +1,5 @@
 import { getCartTotalPrice } from "../../cart-service.ts";
+import { CategoryService } from "../../category.ts";
 
 class HeaderBar extends HTMLElement {
   connectedCallback() {
@@ -10,39 +11,36 @@ class HeaderBar extends HTMLElement {
           <i data-lucide="menu"></i>
           <p class="hidden font-[Karla] font-bold lg:block">MENU</p>
         </button>
-        <img
+        <a class="flex justify-center-safe" href="/"><img
           class="max-lg:place-self-center-safe"
           src="logo.png"
           width="150"
           height="39"
-        />
-        <div
+        /></a>
+        <form
+          id="header-search-form"
           class="hidden font-[Karla] lg:flex lg:items-stretch lg:justify-center-safe"
         >
           <input
+            name="name"
+            id="header-name"
             class="flex-1 border border-gray-300 p-2 text-sm outline-none placeholder:text-gray-500"
             placeholder="Search for products"
           />
           <select
+            name="category"
+            id="header-category"
             class="border border-l-0 border-gray-300 p-2 text-sm text-gray-500"
           >
-            <option value="" disabled selected hidden>SELECT CATEGORY</option>
-            <option value="all">All Products</option>
-            <option value="essentials">Eco-Friendly Essentials</option>
-            <option value="personal-care">Natural Personal Care</option>
-            <option value="kitchen">Kitchen &amp; Cleaning</option>
-            <option value="clothing">Sustainable Fashion</option>
-            <option value="baby-kids">Baby &amp; Kids</option>
-            <option value="garden">Garden &amp; Outdoors</option>
-            <option value="pets">Eco Pet Products</option>
-            <option value="storage">Reusable Bags &amp; Storage</option>
+            <option value="">ALL CATEGORIES</option>
           </select>
-          <div
+          <button
+            type="submit"
             class="flex aspect-square h-auto min-w-10 items-center-safe justify-center-safe border border-l-0 border-gray-300"
           >
             <i class="size-5 text-gray-500" data-lucide="search"></i>
-          </div>
-        </div>
+          </button>
+        </form>
         <div
           class="justify-self-end-safe font-[Karla] lg:flex lg:items-center-safe lg:gap-x-3"
         >
@@ -56,24 +54,69 @@ class HeaderBar extends HTMLElement {
     `;
 
     const navBtn = this.querySelector<HTMLButtonElement>("#nav-btn");
-    if (!navBtn) return;
-
-    navBtn.addEventListener("click", function () {
+    navBtn?.addEventListener("click", () => {
       this.dispatchEvent(
         new CustomEvent("hamburger-nav-open", { bubbles: true }),
       );
     });
 
+    this.populateCategories().then(() => this.prefillFromUrl());
+    this.setupSearchForm();
     this.setupCartPrice();
   }
 
+  private async populateCategories() {
+    const select = this.querySelector<HTMLSelectElement>("#header-category");
+    if (!select) return;
+
+    const categories = await CategoryService.getCategories();
+    categories.forEach((cat) => {
+      const option = document.createElement("option");
+      option.value = cat.id.toString();
+      option.textContent = cat.name;
+      select.appendChild(option);
+    });
+  }
+
+  /** Prefill inputs if URL contains ?name=...&category=... */
+  private prefillFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const nameParam = params.get("name");
+    const categoryParam = params.get("category");
+
+    const nameInput = this.querySelector<HTMLInputElement>("#header-name");
+    const categorySelect =
+      this.querySelector<HTMLSelectElement>("#header-category");
+
+    if (nameParam && nameInput) nameInput.value = nameParam;
+    if (categoryParam && categorySelect) categorySelect.value = categoryParam;
+  }
+
+  private setupSearchForm() {
+    const form = this.querySelector<HTMLFormElement>("#header-search-form");
+    if (!form) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const name = (formData.get("name") as string) || "";
+      const category = (formData.get("category") as string) || "";
+
+      const params = new URLSearchParams();
+      if (name) params.set("name", name);
+      if (category) params.set("category", category);
+
+      window.location.href = `/shop.html${params.toString() ? `?${params.toString()}` : ""}`;
+    });
+  }
+
   private setupCartPrice() {
-    const cartPrice = document.querySelector("#cart-price");
+    const cartPrice = this.querySelector("#cart-price");
     if (!cartPrice) return;
 
     const updatePrice = async () => {
       const price = await getCartTotalPrice();
-      cartPrice.textContent = price.toString();
+      cartPrice.textContent = price.toFixed(2);
     };
 
     updatePrice();
