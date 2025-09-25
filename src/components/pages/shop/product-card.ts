@@ -12,7 +12,7 @@ class ProductCard extends HTMLElement {
           <img class="cursor-pointer" src="${imgSrc}" />
         </a>
         <div class="flex flex-col items-center-safe">
-          <a href="/product.html?id={id}" class="text-center font-[Montserrat] font-bold">
+          <a href="/product.html?id=${id}" class="text-center font-[Montserrat] font-bold">
             ${name}
           </a>
           <p class="text-center font-[Karla] text-sm text-gray-500">

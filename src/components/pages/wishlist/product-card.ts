@@ -1,10 +1,13 @@
+import ProductService from "../../../product";
+
 class ProductCard extends HTMLElement {
-  connectedCallback() {
-    const id = this.getAttribute("data-id");
-    const imgSrc = this.getAttribute("data-img");
-    const name = this.getAttribute("data-name");
-    const category = this.getAttribute("data-category");
-    const price = this.getAttribute("data-price");
+  async connectedCallback() {
+    const id = this.getAttribute("data-id")!;
+    const product = await ProductService.getProductById(parseInt(id));
+    const imgSrc = product?.imgPath;
+    const name = product?.name;
+    const category = product?.categoryName;
+    const price = product?.price;
 
     this.innerHTML = `
       <div class="flex flex-col items-center-safe gap-y-2">

@@ -16,6 +16,7 @@ class HamburgerNav extends HTMLElement {
           <a class="border-b border-b-gray-300 px-4 py-2">Blog</a>
           <a class="border-b border-b-gray-300 px-4 py-2">Contact Us</a>
           <a
+            href="/wishlist.html"
             class="flex items-center-safe gap-x-2 border-b border-b-gray-300 px-4 py-2"
           >
             <i class="size-4" data-lucide="heart"></i>

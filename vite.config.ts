@@ -11,6 +11,7 @@ export default defineConfig({
         cart: "./cart.html",
         confirm: "./confirm.html",
         shop: "./shop.html",
+        wishlist: "./wishlist.html",
       },
     },
   },

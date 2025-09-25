@@ -7,7 +7,7 @@ class ProductsSection extends HTMLElement {
       <section class="flex flex-col gap-y-4 px-4 md:px-[5dvw] lg:px-[15dvw]">
         <h1 class="text-center font-[Montserrat] text-3xl font-bold">Shop</h1>
         <form
-          class="mb-4 flex flex-col justify-center-safe gap-x-4 gap-y-2 font-[Karla] sm:flex-row"
+          class="mb-4 flex flex-col justify-center-safe gap-x-4 gap-y-2 font-[Karla] lg:flex-row"
         >
           <input
             name="name"

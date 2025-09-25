@@ -3,6 +3,10 @@ import ProductService from "../../../product";
 import { db } from "../../../db";
 import { addToCart, removeFromCart } from "../../../cart-service.ts";
 import { goBackWithRefresh } from "../../../utils/go-back-with-refresh.ts";
+import {
+  addToWishlist,
+  removeFromWishlist,
+} from "../../../wishlist-service.ts";
 
 class ProductSection extends HTMLElement {
   async connectedCallback() {
@@ -77,10 +81,14 @@ class ProductSection extends HTMLElement {
               <i class="size-4" data-lucide="shuffle"></i>
               <p>Add to Compare</p>
             </div>
-            <div class="flex items-center-safe gap-x-2">
+            <button id="add-to-wishlist-btn" class="items-center-safe cursor-pointer gap-x-2 hidden">
               <i class="size-4" data-lucide="heart"></i>
               <p>Add to Wishlist</p>
-            </div>
+            </button>
+            <button id="remove-from-wishlist-btn" class="items-center-safe cursor-pointer gap-x-2 hidden">
+              <i class="size-4" data-lucide="heart"></i>
+              <p>Remove from Wishlist</p>
+            </button>
           </div>
           <div class="font-[Karla]">
             <p><b>SKU:</b> ${product?.sku}</p>
@@ -108,6 +116,7 @@ class ProductSection extends HTMLElement {
 
     this.setupQty(product!.id);
     this.setupCartUpdate(product!.id);
+    this.setupWishlist(product!.id);
   }
 
   private setupQty(productId: number) {
@@ -167,6 +176,42 @@ class ProductSection extends HTMLElement {
 
     updateUI();
     this.addEventListener("cart-updated", updateUI);
+  }
+
+  private async setupWishlist(productId: number) {
+    const addToWishlistBtn = this.querySelector("#add-to-wishlist-btn");
+    const removeFromWishlistBtn = this.querySelector(
+      "#remove-from-wishlist-btn",
+    );
+    if (!addToWishlistBtn || !removeFromWishlistBtn) return;
+
+    addToWishlistBtn.addEventListener("click", function () {
+      addToWishlist(productId);
+      addToWishlistBtn.classList.remove("flex");
+      addToWishlistBtn.classList.add("hidden");
+
+      removeFromWishlistBtn.classList.add("flex");
+      removeFromWishlistBtn.classList.remove("hidden");
+    });
+    removeFromWishlistBtn.addEventListener("click", function () {
+      removeFromWishlist(productId);
+
+      removeFromWishlistBtn.classList.remove("flex");
+      removeFromWishlistBtn.classList.add("hidden");
+
+      addToWishlistBtn.classList.add("flex");
+      addToWishlistBtn.classList.remove("hidden");
+    });
+
+    const exists = await db.wishlist.get(productId);
+
+    if (exists) {
+      removeFromWishlistBtn.classList.add("flex");
+      removeFromWishlistBtn.classList.remove("hidden");
+    } else {
+      addToWishlistBtn.classList.add("flex");
+      addToWishlistBtn.classList.remove("hidden");
+    }
   }
 }
 
