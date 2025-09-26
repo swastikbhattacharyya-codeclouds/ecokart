@@ -45,7 +45,7 @@ class HeaderBar extends HTMLElement {
           class="justify-self-end-safe font-[Karla] lg:flex lg:items-center-safe lg:gap-x-3"
         >
           <div class="hidden text-sm font-bold lg:block">LOGIN / REGISTER</div>
-          <a href="/wishlist.html"><i class="lg:size-4" data-lucide="heart"></i></a>
+          <a class="hidden" href="/wishlist.html"><i class="lg:size-4" data-lucide="heart"></i></a>
           <i class="hidden size-4 lg:block" data-lucide="shuffle"></i>
           <a href="/cart.html"><i class="lg:size-4" data-lucide="shopping-cart"></i></a>
           <div class="hidden font-bold lg:block">&#8377;<span id="cart-price">0.00</span></div>
