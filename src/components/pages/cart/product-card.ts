@@ -63,7 +63,7 @@ class ProductCard extends HTMLElement {
 
     this.setupQty(product?.id);
     this.setupRemove(product?.id);
-    this.setupCartUpdate(product?.id);
+    this.setupCartUpdate(product?.id, product?.price);
   }
 
   private setupQty(productId: number) {
@@ -105,14 +105,17 @@ class ProductCard extends HTMLElement {
     });
   }
 
-  private setupCartUpdate(productId: number) {
+  private setupCartUpdate(productId: number, price: number) {
     const qtyValue = this.querySelector(".qty-value");
-    if (!qtyValue) return;
+    const priceVal = this.querySelector(".price-val");
+    if (!qtyValue || !priceVal) return;
 
     const updateUI = async () => {
       const item = await db.cart.get(productId);
-      if (item) qtyValue.textContent = item.qty.toString();
-      else qtyValue.textContent = "0";
+      if (item) {
+        qtyValue.textContent = item.qty.toString();
+        priceVal.textContent = (item.qty * price).toString();
+      } else qtyValue.textContent = "0";
     };
 
     updateUI();

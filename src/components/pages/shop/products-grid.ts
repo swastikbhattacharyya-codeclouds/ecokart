@@ -1,14 +1,9 @@
 import ProductService from "../../../product.ts";
-import "./product-card.ts";
+import "../../ui/product-card.ts";
 
 class ProductsGrid extends HTMLElement {
   private products: {
     id: number;
-    name: string;
-    categoryId: number;
-    category: string;
-    imgSrc: string;
-    price: number;
   }[];
 
   constructor() {
@@ -27,10 +22,7 @@ class ProductsGrid extends HTMLElement {
       .map((product) => ({
         id: product.id,
         name: product.name,
-        category: product.categoryName ?? "",
         categoryId: product.categoryId,
-        imgSrc: product.imgPath,
-        price: product.price,
       }))
       .filter((p) => {
         const matchesName =
@@ -54,7 +46,7 @@ class ProductsGrid extends HTMLElement {
     this.products.forEach(function (product) {
       bestSellersGrid.insertAdjacentHTML(
         "beforeend",
-        `<product-card data-id="${product.id}" data-name="${product.name}" data-category="${product.category}" data-img="${product.imgSrc}" data-price="${product.price}"><product-card>`,
+        `<product-card data-id="${product.id}"><product-card>`,
       );
     });
   }

@@ -1,14 +1,10 @@
-import "./product-card.ts";
+import "../../ui/product-card.ts";
 import { hideGrid, showGrid } from "../../../utils/anim.ts";
 import ProductService from "../../../product.ts";
 
 class NewArrivalsGrid extends HTMLElement {
   private readonly products: {
     id: number;
-    name: string;
-    category: string;
-    imgSrc: string;
-    price: number;
   }[];
 
   constructor() {
@@ -27,10 +23,6 @@ class NewArrivalsGrid extends HTMLElement {
     shownProducts.forEach((product) => {
       this.products.push({
         id: product.id,
-        name: product.name,
-        category: product.categoryName ?? "",
-        imgSrc: product.imgPath,
-        price: product.price,
       });
     });
 
@@ -48,7 +40,7 @@ class NewArrivalsGrid extends HTMLElement {
     this.products.forEach(function (product) {
       newArrivalsGrid.insertAdjacentHTML(
         "beforeend",
-        `<product-card data-id="${product.id}" data-name="${product.name}" data-category="${product.category}" data-img="${product.imgSrc}" data-price="${product.price}"><product-card>`,
+        `<product-card data-id="${product.id}"><product-card>`,
       );
     });
 

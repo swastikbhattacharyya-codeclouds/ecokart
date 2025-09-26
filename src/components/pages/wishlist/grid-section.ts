@@ -12,7 +12,7 @@ class GridSection extends HTMLElement {
         </h1>
         <div
           id="wishlist-grid"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-4"
         >
         </div>
         <div id="wishlist-empty" class="hidden font-[Karla] text-center text-gray-600 justify-center-safe items-center-safe text-lg">
@@ -34,6 +34,14 @@ class GridSection extends HTMLElement {
       const element = document.createElement("product-card");
       element.setAttribute("data-id", product.productId.toString());
       wishlistGrid.append(element);
+    });
+
+    document.addEventListener("wishlist-updated", async () => {
+      const wishlist = await db.wishlist.toArray();
+      if (wishlist.length === 0) {
+        wishlistEmpty.classList.remove("hidden");
+        wishlistEmpty.classList.add("flex");
+      }
     });
   }
 }
